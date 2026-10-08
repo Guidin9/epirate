@@ -2,7 +2,7 @@
 (function () {
   'use strict';
   const NS = globalThis.PVIMDB;
-  const { T, formatRating, formatVotes, ratingTier } = NS;
+  const { t, formatRating, votesText, ratingTier, textDirection } = NS;
 
   const CHIP_ATTR = 'data-pvimdb-chip';
   // React sayfayı hydrate etmeden DOM'a dokunmamak için yüklemeden sonra bekle.
@@ -35,6 +35,7 @@ a:focus-visible { outline: 2px solid #f5c518; outline-offset: 2px; }
     const style = document.createElement('style');
     style.textContent = CSS;
     const a = document.createElement('a');
+    a.dir = textDirection();
     a.target = '_blank';
     a.rel = 'noopener noreferrer';
     shadow.append(style, a);
@@ -65,7 +66,7 @@ a:focus-visible { outline: 2px solid #f5c518; outline-offset: 2px; }
       if (ep.votes) {
         const votes = document.createElement('span');
         votes.className = 'votes';
-        votes.textContent = `${formatVotes(ep.votes)} ${T.votes}`;
+        votes.textContent = votesText(ep.votes);
         a.append(votes);
       }
       a.href = ep.url || `https://www.imdb.com/title/${ep.id}/`;
@@ -74,7 +75,7 @@ a:focus-visible { outline: 2px solid #f5c518; outline-offset: 2px; }
       a.className = 'none';
       const muted = document.createElement('span');
       muted.className = 'muted';
-      muted.textContent = ep ? T.noRating : T.episodeNotFound;
+      muted.textContent = ep ? t('noRating') : t('episodeNotFound');
       a.append(muted);
       if (ep) a.href = ep.url || `https://www.imdb.com/title/${ep.id}/`;
       else a.removeAttribute('href');

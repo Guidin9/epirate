@@ -1,0 +1,353 @@
+{
+  "extName": {
+    "message": "EpiRate – Episode Ratings While You Watch",
+    "description": "Extension name (max 75 chars)"
+  },
+  "extShortName": {
+    "message": "EpiRate",
+    "description": "Short name"
+  },
+  "extDescription": {
+    "message": "Shows the IMDb rating of the Prime Video episode you're watching, right in the player and in the episode list.",
+    "description": "Extension description (max 132 chars)"
+  },
+  "actionTitle": {
+    "message": "EpiRate",
+    "description": "Toolbar button tooltip"
+  },
+  "cmdToggle": {
+    "message": "Show / hide the rating badge",
+    "description": "Keyboard shortcut description"
+  },
+  "loading": {
+    "message": "Finding rating…"
+  },
+  "noRating": {
+    "message": "No rating yet"
+  },
+  "notFound": {
+    "message": "Not found on IMDb"
+  },
+  "episodeNotFound": {
+    "message": "Episode not on IMDb"
+  },
+  "error": {
+    "message": "Couldn't reach IMDb"
+  },
+  "retry": {
+    "message": "Retry"
+  },
+  "votesCount": {
+    "message": "$COUNT$ votes",
+    "description": "Vote count; COUNT is already formatted (e.g. 30K)",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "series": {
+    "message": "Series",
+    "description": "Label before the overall series rating"
+  },
+  "seasonEpisode": {
+    "message": "Season $SEASON$ · Episode $EPISODE$",
+    "placeholders": {
+      "season": {
+        "content": "$1"
+      },
+      "episode": {
+        "content": "$2"
+      }
+    }
+  },
+  "episodeN": {
+    "message": "Episode $NUM$",
+    "placeholders": {
+      "num": {
+        "content": "$1"
+      }
+    }
+  },
+  "seasonChartTitle": {
+    "message": "Season $SEASON$ ratings",
+    "placeholders": {
+      "season": {
+        "content": "$1"
+      }
+    }
+  },
+  "openImdb": {
+    "message": "Open on IMDb"
+  },
+  "openSeries": {
+    "message": "Series page"
+  },
+  "wrongMatch": {
+    "message": "Wrong show? Fix it from the EpiRate icon in the toolbar."
+  },
+  "matchedByTitle": {
+    "message": "Matched by episode title"
+  },
+  "matchedByOverride": {
+    "message": "Your manual match"
+  },
+  "close": {
+    "message": "Close"
+  },
+  "badgeLabel": {
+    "message": "IMDb rating"
+  },
+  "panelLabel": {
+    "message": "IMDb details"
+  },
+  "popupSubtitle": {
+    "message": "Episode ratings for Prime Video"
+  },
+  "popupLoading": {
+    "message": "Loading…"
+  },
+  "notPrime": {
+    "message": "This tab isn't Prime Video. Open an episode on Prime Video and its rating shows up here too."
+  },
+  "idleHint": {
+    "message": "Play an episode or open a series page and the ratings show up here."
+  },
+  "kickerEpisode": {
+    "message": "Now watching"
+  },
+  "kickerMovie": {
+    "message": "Now watching · movie"
+  },
+  "kickerShow": {
+    "message": "Now watching"
+  },
+  "listStatusOk": {
+    "message": "Season $SEASON$ · ratings shown for $COUNT$ episodes",
+    "placeholders": {
+      "season": {
+        "content": "$1"
+      },
+      "count": {
+        "content": "$2"
+      }
+    }
+  },
+  "listLoading": {
+    "message": "Loading ratings…"
+  },
+  "seasonNotFound": {
+    "message": "This season isn't on IMDb yet"
+  },
+  "seriesOverall": {
+    "message": "overall series rating"
+  },
+  "fixToggle": {
+    "message": "Wrong match? Fix it"
+  },
+  "fixTitle": {
+    "message": "Pick the right show or movie"
+  },
+  "fixFor": {
+    "message": "Title on Prime: “$TITLE$”. Your choice is remembered for this title.",
+    "placeholders": {
+      "title": {
+        "content": "$1"
+      }
+    }
+  },
+  "searchPlaceholder": {
+    "message": "Search IMDb…"
+  },
+  "searchButton": {
+    "message": "Search"
+  },
+  "searching": {
+    "message": "Searching…"
+  },
+  "noResults": {
+    "message": "No results. Try a different or the English title."
+  },
+  "pick": {
+    "message": "Select"
+  },
+  "currentPick": {
+    "message": "Current"
+  },
+  "backToAuto": {
+    "message": "Back to automatic match"
+  },
+  "saved": {
+    "message": "Saved"
+  },
+  "saveFailed": {
+    "message": "Couldn't save"
+  },
+  "revertedAuto": {
+    "message": "Back to automatic matching"
+  },
+  "revertFailed": {
+    "message": "Couldn't undo"
+  },
+  "settingsTitle": {
+    "message": "Settings"
+  },
+  "whenLabel": {
+    "message": "When to show"
+  },
+  "modeControls": {
+    "message": "With controls"
+  },
+  "modeStart": {
+    "message": "At episode start"
+  },
+  "modeAlways": {
+    "message": "Always"
+  },
+  "positionLabel": {
+    "message": "Position"
+  },
+  "posTopLeft": {
+    "message": "Top left"
+  },
+  "posTopRight": {
+    "message": "Top right"
+  },
+  "posBottomLeft": {
+    "message": "Bottom left"
+  },
+  "posBottomRight": {
+    "message": "Bottom right"
+  },
+  "posUnderTitle": {
+    "message": "Under the title"
+  },
+  "underTitleShort": {
+    "message": "Under title"
+  },
+  "screenTitle": {
+    "message": "Show title",
+    "description": "Label on the mini player preview in settings"
+  },
+  "sizeLabel": {
+    "message": "Size"
+  },
+  "sizeS": {
+    "message": "Small"
+  },
+  "sizeM": {
+    "message": "Medium"
+  },
+  "sizeL": {
+    "message": "Large"
+  },
+  "tVotes": {
+    "message": "Vote count"
+  },
+  "tSeries": {
+    "message": "Series rating"
+  },
+  "tChart": {
+    "message": "Season chart on click"
+  },
+  "tList": {
+    "message": "Ratings in episode list"
+  },
+  "tMovies": {
+    "message": "Show for movies too"
+  },
+  "tToolbar": {
+    "message": "Rating on toolbar icon"
+  },
+  "clearCache": {
+    "message": "Clear cache"
+  },
+  "cacheCleared": {
+    "message": "Cache cleared ($COUNT$)",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "clearFailed": {
+    "message": "Couldn't clear"
+  },
+  "copyDiag": {
+    "message": "Copy diagnostics"
+  },
+  "copied": {
+    "message": "Copied to clipboard"
+  },
+  "copyFailed": {
+    "message": "Couldn't copy"
+  },
+  "testConn": {
+    "message": "Test IMDb connection"
+  },
+  "testing": {
+    "message": "Testing…"
+  },
+  "connOk": {
+    "message": "IMDb connection OK ($MS$ ms)",
+    "placeholders": {
+      "ms": {
+        "content": "$1"
+      }
+    }
+  },
+  "connFail": {
+    "message": "Connection error: $CODE$",
+    "placeholders": {
+      "code": {
+        "content": "$1"
+      }
+    }
+  },
+  "shortcutHint": {
+    "message": "Show/hide badge:"
+  },
+  "reportBug": {
+    "message": "Report a bug / Contact"
+  },
+  "reportIntro": {
+    "message": "Found a bug or have a suggestion? Write it below. Nothing is sent automatically: it opens in your email and you send it yourself."
+  },
+  "reportPlaceholder": {
+    "message": "What happened? Which show and episode? Or just write your message."
+  },
+  "reportIncludeDiag": {
+    "message": "Include technical details (version, language, detected title and episode)"
+  },
+  "reportEmail": {
+    "message": "Open in email app"
+  },
+  "reportGmail": {
+    "message": "Open in Gmail"
+  },
+  "reportCopy": {
+    "message": "Copy report"
+  },
+  "reportCopied": {
+    "message": "Report copied — send it to $EMAIL$",
+    "placeholders": {
+      "email": {
+        "content": "$1"
+      }
+    }
+  },
+  "reportOrWrite": {
+    "message": "Or write to $EMAIL$",
+    "placeholders": {
+      "email": {
+        "content": "$1"
+      }
+    }
+  },
+  "reportGithub": {
+    "message": "Report on GitHub"
+  },
+  "disclaimer": {
+    "message": "Not affiliated with IMDb or Amazon. Rating data: IMDb."
+  }
+}

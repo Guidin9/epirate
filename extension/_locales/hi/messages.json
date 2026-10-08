@@ -1,0 +1,353 @@
+{
+  "extName": {
+    "message": "EpiRate – देखते समय एपिसोड रेटिंग",
+    "description": "Extension name (max 75 chars)"
+  },
+  "extShortName": {
+    "message": "EpiRate",
+    "description": "Short name"
+  },
+  "extDescription": {
+    "message": "Prime Video पर आप जो एपिसोड देख रहे हैं उसकी IMDb रेटिंग प्लेयर और एपिसोड सूची में दिखाता है।",
+    "description": "Extension description (max 132 chars)"
+  },
+  "actionTitle": {
+    "message": "EpiRate",
+    "description": "Toolbar button tooltip"
+  },
+  "cmdToggle": {
+    "message": "रेटिंग बैज दिखाएँ / छिपाएँ",
+    "description": "Keyboard shortcut description"
+  },
+  "loading": {
+    "message": "रेटिंग खोजी जा रही है…"
+  },
+  "noRating": {
+    "message": "अभी कोई रेटिंग नहीं"
+  },
+  "notFound": {
+    "message": "IMDb पर नहीं मिला"
+  },
+  "episodeNotFound": {
+    "message": "यह एपिसोड IMDb पर नहीं है"
+  },
+  "error": {
+    "message": "IMDb से कनेक्ट नहीं हो सका"
+  },
+  "retry": {
+    "message": "फिर कोशिश करें"
+  },
+  "votesCount": {
+    "message": "$COUNT$ वोट",
+    "description": "Vote count; COUNT is already formatted (e.g. 30K)",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "series": {
+    "message": "सीरीज़",
+    "description": "Label before the overall series rating"
+  },
+  "seasonEpisode": {
+    "message": "सीज़न $SEASON$ · एपिसोड $EPISODE$",
+    "placeholders": {
+      "season": {
+        "content": "$1"
+      },
+      "episode": {
+        "content": "$2"
+      }
+    }
+  },
+  "episodeN": {
+    "message": "एपिसोड $NUM$",
+    "placeholders": {
+      "num": {
+        "content": "$1"
+      }
+    }
+  },
+  "seasonChartTitle": {
+    "message": "सीज़न $SEASON$ की रेटिंग",
+    "placeholders": {
+      "season": {
+        "content": "$1"
+      }
+    }
+  },
+  "openImdb": {
+    "message": "IMDb पर खोलें"
+  },
+  "openSeries": {
+    "message": "सीरीज़ पेज"
+  },
+  "wrongMatch": {
+    "message": "गलत सीरीज़? टूलबार में EpiRate आइकन से ठीक करें।"
+  },
+  "matchedByTitle": {
+    "message": "एपिसोड के नाम से मिलान किया गया"
+  },
+  "matchedByOverride": {
+    "message": "आपके द्वारा चुना गया मिलान"
+  },
+  "close": {
+    "message": "बंद करें"
+  },
+  "badgeLabel": {
+    "message": "IMDb रेटिंग"
+  },
+  "panelLabel": {
+    "message": "IMDb विवरण"
+  },
+  "popupSubtitle": {
+    "message": "Prime Video के लिए एपिसोड रेटिंग"
+  },
+  "popupLoading": {
+    "message": "लोड हो रहा है…"
+  },
+  "notPrime": {
+    "message": "यह टैब Prime Video नहीं है। Prime Video पर कोई एपिसोड खोलें, उसकी रेटिंग यहाँ भी दिखेगी।"
+  },
+  "idleHint": {
+    "message": "कोई एपिसोड चलाएँ या किसी सीरीज़ का पेज खोलें, रेटिंग यहाँ दिखेगी।"
+  },
+  "kickerEpisode": {
+    "message": "अभी देख रहे हैं"
+  },
+  "kickerMovie": {
+    "message": "अभी देख रहे हैं · फ़िल्म"
+  },
+  "kickerShow": {
+    "message": "अभी देख रहे हैं"
+  },
+  "listStatusOk": {
+    "message": "सीज़न $SEASON$ · सूची में $COUNT$ एपिसोड की रेटिंग",
+    "placeholders": {
+      "season": {
+        "content": "$1"
+      },
+      "count": {
+        "content": "$2"
+      }
+    }
+  },
+  "listLoading": {
+    "message": "रेटिंग लोड हो रही हैं…"
+  },
+  "seasonNotFound": {
+    "message": "यह सीज़न अभी IMDb पर नहीं है"
+  },
+  "seriesOverall": {
+    "message": "सीरीज़ की कुल रेटिंग"
+  },
+  "fixToggle": {
+    "message": "गलत मिलान? ठीक करें"
+  },
+  "fixTitle": {
+    "message": "सही सीरीज़ या फ़िल्म चुनें"
+  },
+  "fixFor": {
+    "message": "Prime पर नाम: “$TITLE$”। आपकी पसंद इस नाम के लिए याद रखी जाएगी।",
+    "placeholders": {
+      "title": {
+        "content": "$1"
+      }
+    }
+  },
+  "searchPlaceholder": {
+    "message": "IMDb पर खोजें…"
+  },
+  "searchButton": {
+    "message": "खोजें"
+  },
+  "searching": {
+    "message": "खोज रहे हैं…"
+  },
+  "noResults": {
+    "message": "कोई परिणाम नहीं। कोई दूसरा या अंग्रेज़ी नाम आज़माएँ।"
+  },
+  "pick": {
+    "message": "चुनें"
+  },
+  "currentPick": {
+    "message": "वर्तमान"
+  },
+  "backToAuto": {
+    "message": "स्वचालित मिलान पर लौटें"
+  },
+  "saved": {
+    "message": "सहेजा गया"
+  },
+  "saveFailed": {
+    "message": "सहेजा नहीं जा सका"
+  },
+  "revertedAuto": {
+    "message": "स्वचालित मिलान पर लौट आए"
+  },
+  "revertFailed": {
+    "message": "पूर्ववत नहीं किया जा सका"
+  },
+  "settingsTitle": {
+    "message": "सेटिंग्स"
+  },
+  "whenLabel": {
+    "message": "कब दिखाएँ?"
+  },
+  "modeControls": {
+    "message": "कंट्रोल के साथ"
+  },
+  "modeStart": {
+    "message": "एपिसोड की शुरुआत में"
+  },
+  "modeAlways": {
+    "message": "हमेशा"
+  },
+  "positionLabel": {
+    "message": "स्थान"
+  },
+  "posTopLeft": {
+    "message": "ऊपर बाएँ"
+  },
+  "posTopRight": {
+    "message": "ऊपर दाएँ"
+  },
+  "posBottomLeft": {
+    "message": "नीचे बाएँ"
+  },
+  "posBottomRight": {
+    "message": "नीचे दाएँ"
+  },
+  "posUnderTitle": {
+    "message": "शीर्षक के नीचे"
+  },
+  "underTitleShort": {
+    "message": "शीर्षक के नीचे"
+  },
+  "screenTitle": {
+    "message": "शीर्षक",
+    "description": "Label on the mini player preview in settings"
+  },
+  "sizeLabel": {
+    "message": "आकार"
+  },
+  "sizeS": {
+    "message": "छोटा"
+  },
+  "sizeM": {
+    "message": "मध्यम"
+  },
+  "sizeL": {
+    "message": "बड़ा"
+  },
+  "tVotes": {
+    "message": "वोट संख्या"
+  },
+  "tSeries": {
+    "message": "सीरीज़ रेटिंग"
+  },
+  "tChart": {
+    "message": "क्लिक पर सीज़न चार्ट"
+  },
+  "tList": {
+    "message": "एपिसोड सूची में रेटिंग"
+  },
+  "tMovies": {
+    "message": "फ़िल्मों में भी दिखाएँ"
+  },
+  "tToolbar": {
+    "message": "आइकन पर रेटिंग"
+  },
+  "clearCache": {
+    "message": "कैश साफ़ करें"
+  },
+  "cacheCleared": {
+    "message": "कैश साफ़ हुआ ($COUNT$)",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "clearFailed": {
+    "message": "साफ़ नहीं हो सका"
+  },
+  "copyDiag": {
+    "message": "डायग्नोस्टिक्स कॉपी करें"
+  },
+  "copied": {
+    "message": "क्लिपबोर्ड पर कॉपी किया गया"
+  },
+  "copyFailed": {
+    "message": "कॉपी नहीं हो सका"
+  },
+  "testConn": {
+    "message": "IMDb कनेक्शन जाँचें"
+  },
+  "testing": {
+    "message": "जाँच हो रही है…"
+  },
+  "connOk": {
+    "message": "IMDb कनेक्शन ठीक है ($MS$ ms)",
+    "placeholders": {
+      "ms": {
+        "content": "$1"
+      }
+    }
+  },
+  "connFail": {
+    "message": "कनेक्शन त्रुटि: $CODE$",
+    "placeholders": {
+      "code": {
+        "content": "$1"
+      }
+    }
+  },
+  "shortcutHint": {
+    "message": "बैज दिखाएँ/छिपाएँ:"
+  },
+  "reportBug": {
+    "message": "बग रिपोर्ट / संपर्क"
+  },
+  "reportIntro": {
+    "message": "कोई बग मिला या कोई सुझाव है? नीचे लिखें। कुछ भी अपने आप नहीं भेजा जाता: यह आपके ईमेल में खुलता है और आप ही इसे भेजते हैं।"
+  },
+  "reportPlaceholder": {
+    "message": "क्या हुआ? कौन-सी सीरीज़ और एपिसोड? या बस अपना संदेश लिखें।"
+  },
+  "reportIncludeDiag": {
+    "message": "तकनीकी जानकारी जोड़ें (संस्करण, भाषा, पहचानी गई सीरीज़ और एपिसोड)"
+  },
+  "reportEmail": {
+    "message": "ईमेल ऐप में खोलें"
+  },
+  "reportGmail": {
+    "message": "Gmail में खोलें"
+  },
+  "reportCopy": {
+    "message": "रिपोर्ट कॉपी करें"
+  },
+  "reportCopied": {
+    "message": "रिपोर्ट कॉपी हुई — इसे $EMAIL$ पर भेजें",
+    "placeholders": {
+      "email": {
+        "content": "$1"
+      }
+    }
+  },
+  "reportOrWrite": {
+    "message": "या सीधे $EMAIL$ पर लिखें",
+    "placeholders": {
+      "email": {
+        "content": "$1"
+      }
+    }
+  },
+  "reportGithub": {
+    "message": "GitHub पर रिपोर्ट करें"
+  },
+  "disclaimer": {
+    "message": "IMDb या Amazon से संबद्ध नहीं। रेटिंग डेटा: IMDb."
+  }
+}

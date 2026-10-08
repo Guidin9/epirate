@@ -1,9 +1,10 @@
 {
   "manifest_version": 3,
-  "name": "Prime Video IMDb Puanı",
-  "short_name": "PV IMDb",
-  "version": "1.0.0",
-  "description": "Prime Video'da izlediğin bölümün IMDb puanını oynatıcıda ve dizi sayfasındaki bölüm listesinde gösterir.",
+  "name": "__MSG_extName__",
+  "short_name": "__MSG_extShortName__",
+  "version": "1.1.0",
+  "description": "__MSG_extDescription__",
+  "default_locale": "en",
   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAzyldVgfJrnLzHkItvPi3TN/Ag/IW37h+0ecsOMTgdoYQItOD7d0T/3OjBw1FL6EtFIKuO7xcQmROgALv7DMZi63bSoqjwNPuko+XvAphRVFmhX98xoGuPOoaEeyZrpFOj+s1EF+DKS0AY5/SBzEWHcWW0XP6utayGNWAeO5fThR+dJREWVomPeQHTMtYllVGjJnx8UDaAfkNgEB2IP5ITn+ESyJjPC9EGV+IQVBybVZbx33MRPkMVIM6gVITySwxl2cVgI74oPJKfsSoiKUBhNrwBDNru0uCe6ozRhcx7JeO+bVLnaf2lnDIw57Unt9rd1+OVCH77AEGsB3MYyYtIQIDAQAB",
   "minimum_chrome_version": "121",
   "icons": {
@@ -13,7 +14,7 @@
     "128": "icons/icon128.png"
   },
   "action": {
-    "default_title": "Prime Video IMDb Puanı",
+    "default_title": "__MSG_actionTitle__",
     "default_popup": "popup/popup.html",
     "default_icon": {
       "16": "icons/icon16.png",
@@ -57,7 +58,7 @@
       "suggested_key": {
         "default": "Alt+Shift+I"
       },
-      "description": "Puan rozetini gizle / göster"
+      "description": "__MSG_cmdToggle__"
     }
   }
 }

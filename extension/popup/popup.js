@@ -1,22 +1,43 @@
-// Popup: o anki eşleşme, ayarlar, elle düzeltme, tanılama.
+// Popup: o anki eşleşme, ayarlar, elle düzeltme, tanılama. Metinler tarayıcının dilinde (chrome.i18n).
 (function () {
   'use strict';
   const NS = globalThis.PVIMDB;
-  const { T, formatRating, formatVotes } = NS;
+  const { t, formatRating, votesText } = NS;
   const $ = (id) => document.getElementById(id);
 
   let tabId = null;
   let state = null;
   let settings = Object.assign({}, NS.DEFAULT_SETTINGS);
 
+  // HTML'deki data-i18n işaretli metinleri doldur; Arapçada sağdan sola.
+  function applyI18n() {
+    document.documentElement.lang = NS.uiLocale();
+    document.documentElement.dir = NS.textDirection();
+    document.querySelectorAll('[data-i18n]').forEach((el) => { el.textContent = t(el.dataset.i18n); });
+    document.querySelectorAll('[data-i18n-placeholder]').forEach((el) => { el.placeholder = t(el.dataset.i18nPlaceholder); });
+    document.querySelectorAll('[data-i18n-aria-label]').forEach((el) => { el.setAttribute('aria-label', t(el.dataset.i18nAriaLabel)); });
+    $('openImdb').textContent = t('openImdb') + ' ↗';
+  }
+  applyI18n();
   $('version').textContent = 'v' + chrome.runtime.getManifest().version;
 
   function toast(text) {
-    const t = $('toast');
-    t.textContent = text;
-    t.classList.add('show');
+    const box = $('toast');
+    box.textContent = text;
+    box.classList.add('show');
     clearTimeout(toast.timer);
-    toast.timer = setTimeout(() => t.classList.remove('show'), 1600);
+    toast.timer = setTimeout(() => box.classList.remove('show'), 1600);
+  }
+
+  function span(className, text) {
+    const s = document.createElement('span');
+    if (className) s.className = className;
+    if (text != null) s.textContent = text;
+    return s;
+  }
+
+  function scoreLine(rating, extra) {
+    return [span('star', '★'), span('big', formatRating(rating)), span('of', '/10'), span('votes', extra || '')];
   }
 
   async function resolveTab() {
@@ -50,7 +71,7 @@
     const fix = $('fixToggle');
     const open = $('openImdb');
     if (!state) {
-      empty.textContent = 'Bu sekme Prime Video değil. Prime Video’da bir bölüm açınca puan burada da görünür.';
+      empty.textContent = t('notPrime');
       empty.hidden = false;
       body.hidden = true;
       return;
@@ -58,7 +79,7 @@
     const p = state.player;
     const l = state.list;
     if (!p && !(l && l.active)) {
-      empty.textContent = 'Bir bölüm oynatınca ya da bir dizinin sayfasını açınca puanlar burada görünür.';
+      empty.textContent = t('idleHint');
       empty.hidden = false;
       body.hidden = true;
       return;
@@ -75,64 +96,54 @@
 
     const addYears = (show) => {
       if (show && show.year) {
-        const y = document.createElement('span');
-        y.className = 'years';
-        y.textContent = show.endYear && show.endYear !== show.year ? `${show.year}–${show.endYear}` : String(show.year);
-        title.append(y);
+        title.append(span('years', show.endYear && show.endYear !== show.year ? `${show.year}–${show.endYear}` : String(show.year)));
       }
     };
 
     if (p) {
       const r = p.result;
-      kicker.textContent = r && r.kind === 'show' ? 'Şu an izlenen içerik' : p.item.kind === 'movie' ? 'Şu an izlenen film' : 'Şu an izlenen bölüm';
+      kicker.textContent = r && r.kind === 'show' ? t('kickerShow') : p.item.kind === 'movie' ? t('kickerMovie') : t('kickerEpisode');
       title.append(r && r.show ? r.show.name : p.item.title);
       addYears(r && r.show);
       const season = r && r.episode ? r.episode.season : p.item.season;
       const number = r && r.episode ? r.episode.episode : p.item.episode;
       if (season != null && number != null) {
-        ep.append(`${season}. ${T.season} · ${number}. ${T.episode}`);
+        ep.append(t('seasonEpisode', [season, number]));
         const epTitle = (r && r.episode && r.episode.title) || p.item.episodeTitle;
-        if (epTitle) { ep.append(' — '); const b = document.createElement('b'); b.textContent = epTitle; ep.append(b); }
+        if (epTitle) {
+          const b = document.createElement('b');
+          b.textContent = epTitle;
+          ep.append(' — ', b);
+        }
       }
       const subject = r ? (r.episode || (r.kind !== 'episode' ? r.show : null)) : null;
       if (p.status === 'loading') {
-        score.innerHTML = '<span class="state">Puan aranıyor…</span>';
+        score.append(span('state', t('loading')));
       } else if (p.status === 'error') {
-        const s = document.createElement('span');
-        s.className = 'state error';
-        s.textContent = `${T.error} (${(p.error && p.error.code) || 'hata'})`;
-        score.append(s);
+        score.append(span('state error', `${t('error')} (${(p.error && p.error.code) || 'error'})`));
       } else if (subject && typeof subject.rating === 'number') {
-        score.innerHTML = '<span class="star">★</span><span class="big"></span><span class="of">/10</span><span class="votes"></span>';
-        score.querySelector('.big').textContent = formatRating(subject.rating);
-        score.querySelector('.votes').textContent = subject.votes ? `${formatVotes(subject.votes)} ${T.votes}` : '';
+        score.append(...scoreLine(subject.rating, subject.votes ? votesText(subject.votes) : ''));
       } else {
-        const s = document.createElement('span');
-        s.className = 'state';
-        s.textContent = p.status === 'not-found' ? T.notFound : p.status === 'episode-not-found' ? T.episodeNotFound : T.noRating;
-        score.append(s);
+        score.append(span('state', p.status === 'not-found' ? t('notFound') : p.status === 'episode-not-found' ? t('episodeNotFound') : t('noRating')));
       }
       if (r && r.kind === 'episode' && r.show && typeof r.show.rating === 'number') {
-        meta.append(`${T.series} ★ `);
         const b = document.createElement('b');
         b.textContent = formatRating(r.show.rating);
-        meta.append(b);
+        meta.append(`${t('series')} ★ `, b);
       }
-      if (r && r.matchedBy === 'override') meta.append(meta.childNodes.length ? ' · ' : '', T.matchedByOverride);
-      if (r && r.matchedBy === 'title') meta.append(meta.childNodes.length ? ' · ' : '', T.matchedByTitle);
+      if (r && r.matchedBy === 'override') meta.append(meta.childNodes.length ? ' · ' : '', t('matchedByOverride'));
+      if (r && r.matchedBy === 'title') meta.append(meta.childNodes.length ? ' · ' : '', t('matchedByTitle'));
       const url = r && ((r.episode && r.episode.url) || (r.show && r.show.url));
       if (url) { open.href = url; open.hidden = false; }
     } else {
-      kicker.textContent = 'Dizi sayfası';
+      kicker.textContent = t('openSeries');
       title.append(l.show ? l.show.name : l.query || '');
       addYears(l.show);
-      ep.textContent = l.status === 'ok'
-        ? `${l.season}. ${T.season} · ${l.count} bölümün puanı listede gösteriliyor`
-        : l.status === 'loading' ? 'Puanlar yükleniyor…' : l.status === 'season-not-found' ? 'Bu sezon IMDb’de bulunamadı' : l.status === 'not-found' ? T.notFound : T.error;
-      if (l.show && typeof l.show.rating === 'number') {
-        score.innerHTML = '<span class="star">★</span><span class="big"></span><span class="of">/10</span><span class="votes">dizinin genel puanı</span>';
-        score.querySelector('.big').textContent = formatRating(l.show.rating);
-      }
+      ep.textContent = l.status === 'ok' ? t('listStatusOk', [l.season, l.count])
+        : l.status === 'loading' ? t('listLoading')
+          : l.status === 'season-not-found' ? t('seasonNotFound')
+            : l.status === 'not-found' ? t('notFound') : t('error');
+      if (l.show && typeof l.show.rating === 'number') score.append(...scoreLine(l.show.rating, t('seriesOverall')));
       if (l.show) { open.href = `https://www.imdb.com/title/${l.show.id}/`; open.hidden = false; }
     }
     fix.hidden = !overrideTarget();
@@ -157,12 +168,19 @@
     section.hidden = !open || !target;
     $('fixToggle').setAttribute('aria-expanded', String(!section.hidden));
     if (section.hidden) return;
-    $('fixFor').textContent = `Prime’daki ad: “${target.label}”. Seçimin bu ad için kalıcı olarak hatırlanır.`;
+    $('fixFor').textContent = t('fixFor', [target.label]);
     const input = $('searchInput');
     if (!input.value) input.value = NS.cleanTitle(target.label);
     loadOverrideInfo();
     runSearch(input.value);
     input.focus();
+  }
+
+  function emptyRow(text) {
+    const li = document.createElement('li');
+    li.className = 'empty';
+    li.textContent = text;
+    return li;
   }
 
   let searchToken = 0;
@@ -172,25 +190,16 @@
     list.replaceChildren();
     const q = String(query || '').trim();
     if (!q) return;
-    const li = document.createElement('li');
-    li.className = 'empty';
-    li.textContent = 'Aranıyor…';
-    list.append(li);
+    list.append(emptyRow(t('searching')));
     const res = await chrome.runtime.sendMessage({ type: 'pv:search', query: q }).catch(() => null);
     if (token !== searchToken) return; // daha yeni bir arama başladı
     list.replaceChildren();
     if (!res || !res.ok) {
-      const e = document.createElement('li');
-      e.className = 'empty';
-      e.textContent = T.error;
-      list.append(e);
+      list.append(emptyRow(t('error')));
       return;
     }
     if (!res.results.length) {
-      const e = document.createElement('li');
-      e.className = 'empty';
-      e.textContent = 'Sonuç yok. Farklı ya da İngilizce adı deneyin.';
-      list.append(e);
+      list.append(emptyRow(t('noResults')));
       return;
     }
     const currentId = state && state.player && state.player.result && state.player.result.show ? state.player.result.show.id
@@ -204,8 +213,7 @@
         thumb.src = r.image.replace(/\._V1_.*\.jpg$/, '._V1_QL75_UX64_.jpg');
         thumb.alt = '';
       } else {
-        thumb = document.createElement('span');
-        thumb.className = 'ph';
+        thumb = span('ph');
       }
       const info = document.createElement('div');
       info.className = 'info';
@@ -219,7 +227,7 @@
       const pick = document.createElement('button');
       pick.type = 'button';
       pick.className = 'btn' + (r.id === currentId ? '' : ' primary');
-      pick.textContent = r.id === currentId ? 'Şu anki' : 'Seç';
+      pick.textContent = r.id === currentId ? t('currentPick') : t('pick');
       pick.disabled = r.id === currentId && currentOverrideId === r.id;
       pick.addEventListener('click', () => choose(r));
       item.append(thumb, info, pick);
@@ -231,8 +239,8 @@
     const target = overrideTarget();
     if (!target) return;
     const res = await chrome.runtime.sendMessage({ type: 'pv:setOverride', key: target.key, override: { id: r.id, name: r.name, year: r.year, type: r.type } }).catch(() => null);
-    if (!res || !res.ok) { toast('Kaydedilemedi'); return; }
-    toast('Kaydedildi');
+    if (!res || !res.ok) { toast(t('saveFailed')); return; }
+    toast(t('saved'));
     $('fix').hidden = true;
     $('fixToggle').setAttribute('aria-expanded', 'false');
     refreshSoon();
@@ -242,8 +250,8 @@
     const target = overrideTarget();
     if (!target) return;
     const res = await chrome.runtime.sendMessage({ type: 'pv:setOverride', key: target.key, override: null }).catch(() => null);
-    if (!res || !res.ok) { toast('Geri alınamadı'); return; }
-    toast('Otomatik eşleşmeye dönüldü');
+    if (!res || !res.ok) { toast(t('revertFailed')); return; }
+    toast(t('revertedAuto'));
     $('fix').hidden = true;
     refreshSoon();
   }
@@ -280,7 +288,8 @@
       e.preventDefault();
       const values = Array.from(group.querySelectorAll('[data-value]')).map((b) => b.dataset.value);
       const i = values.indexOf(settings[key]);
-      const next = values[(i + (e.key === 'ArrowLeft' || e.key === 'ArrowUp' ? values.length - 1 : 1)) % values.length];
+      const back = e.key === 'ArrowUp' || (e.key === 'ArrowLeft') !== (document.documentElement.dir === 'rtl');
+      const next = values[(i + (back ? values.length - 1 : 1)) % values.length];
       save({ [key]: next }).then(() => group.querySelector(`[data-value="${next}"]`).focus());
     });
   });
@@ -297,30 +306,120 @@
   $('clearCache').addEventListener('click', async () => {
     const res = await chrome.runtime.sendMessage({ type: 'pv:clearCache' }).catch(() => null);
     if (tabId != null) chrome.tabs.sendMessage(tabId, { type: 'pv:refresh' }).catch(() => {});
-    toast(res && res.ok ? `Önbellek temizlendi (${res.removed})` : 'Temizlenemedi');
+    toast(res && res.ok ? t('cacheCleared', [res.removed]) : t('clearFailed'));
     refreshSoon();
   });
 
   $('copyDiag').addEventListener('click', async () => {
-    const payload = JSON.stringify({ at: new Date().toISOString(), state }, null, 2);
+    const payload = JSON.stringify({ at: new Date().toISOString(), ui: NS.uiLocale(), state }, null, 2);
     try {
       await navigator.clipboard.writeText(payload);
-      toast('Panoya kopyalandı');
+      toast(t('copied'));
     } catch (err) {
-      toast('Kopyalanamadı');
+      toast(t('copyFailed'));
     }
   });
 
   $('testConn').addEventListener('click', async () => {
-    toast('Test ediliyor…');
+    toast(t('testing'));
     const res = await chrome.runtime.sendMessage({ type: 'pv:testConnection' }).catch(() => null);
-    if (res && res.ok) toast(`IMDb bağlantısı tamam (${res.ms} ms)`);
-    else toast(`Bağlantı hatası: ${(res && res.error && res.error.code) || 'bilinmiyor'}`);
+    if (res && res.ok) toast(t('connOk', [res.ms]));
+    else toast(t('connFail', [(res && res.error && res.error.code) || 'unknown']));
+  });
+
+  // ---- Hata bildirimi: sunucu yok, kullanıcı raporu kendi e-postasıyla gönderir ----
+
+  const SUPPORT_EMAIL = 'contact@mertdemirdoven.me';
+  const REPO_URL = 'https://github.com/Guidin9/epirate';
+  const MAX_BODY = 1800; // mailto bağlantıları bazı e-posta uygulamalarında ~2000 karakterle sınırlı
+
+  function hostPath(url) {
+    try {
+      const u = new URL(url);
+      return u.hostname + u.pathname;
+    } catch (err) {
+      return '—';
+    }
+  }
+
+  function browserInfo() {
+    const ua = navigator.userAgentData;
+    const brands = ua && ua.brands ? ua.brands.filter((b) => !/not.?a.?brand/i.test(b.brand)).map((b) => `${b.brand} ${b.version}`).join(', ') : '';
+    const platform = (ua && ua.platform) || navigator.platform || '';
+    return `${brands || navigator.userAgent}${platform ? ' · ' + platform : ''}`;
+  }
+
+  function diagnosticLines() {
+    const lines = [`EpiRate ${chrome.runtime.getManifest().version}`, `Browser: ${browserInfo()}`, `UI language: ${NS.uiLocale()}`];
+    if (!state) {
+      lines.push('Page: not a Prime Video tab');
+      return lines;
+    }
+    const d = state.diagnostics || {};
+    lines.push(
+      `Page: ${hostPath(state.url)}`,
+      `Prime language: ${d.lang || '—'}`,
+      `Player title: ${d.rawTitle || '—'}`,
+      `Episode line: ${d.rawSubtitle || '—'}`,
+      `Parsed: ${d.parsed ? `S${d.parsed.season}E${d.parsed.episode} (${d.parsed.format})` : '—'}`,
+    );
+    const p = state.player;
+    if (p) {
+      const r = p.result;
+      const match = r && r.show ? `${r.show.name} (${r.show.year || '?'}) ${r.show.id}` : '—';
+      const ep = r && r.episode ? ` · S${r.episode.season}E${r.episode.episode} ${r.episode.id} ★${r.episode.rating}` : '';
+      lines.push(`Status: ${p.status}${p.error ? ` (${p.error.code})` : ''}`, `Match: ${match}${ep}${r && r.matchedBy ? ` · ${r.matchedBy}` : ''}`);
+    }
+    const l = state.list;
+    if (l && l.active) lines.push(`Episode list: ${l.status} · ${l.query || '—'} S${l.season} · ${l.count}`);
+    if (state.settings) lines.push(`Settings: ${Object.entries(state.settings).map(([k, v]) => `${k}=${v}`).join(' ')}`);
+    return lines;
+  }
+
+  const reportSubject = () => `EpiRate ${chrome.runtime.getManifest().version} – bug report / feedback`;
+
+  function reportText() {
+    const parts = [$('reportText').value.trim() || '—'];
+    if ($('reportDiag').checked) parts.push('', '— Technical details —', ...diagnosticLines());
+    const body = parts.join('\n');
+    return body.length > MAX_BODY ? body.slice(0, MAX_BODY - 1) + '…' : body;
+  }
+
+  function updateReportLinks() {
+    const subject = encodeURIComponent(reportSubject());
+    const body = encodeURIComponent(reportText());
+    $('reportMail').href = `mailto:${SUPPORT_EMAIL}?subject=${subject}&body=${body}`;
+    $('reportGmail').href = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(SUPPORT_EMAIL)}&su=${subject}&body=${body}`;
+    $('reportGithub').href = `${REPO_URL}/issues/new?title=${subject}&body=${body}`;
+  }
+
+  function openReport(open) {
+    const section = $('report');
+    section.hidden = !open;
+    $('reportBug').setAttribute('aria-expanded', String(open));
+    if (!open) return;
+    $('reportOr').textContent = t('reportOrWrite', [SUPPORT_EMAIL]);
+    updateReportLinks();
+    section.scrollIntoView({ block: 'nearest' });
+    $('reportText').focus();
+  }
+
+  $('reportBug').addEventListener('click', () => openReport($('report').hidden));
+  $('reportText').addEventListener('input', updateReportLinks);
+  $('reportDiag').addEventListener('change', updateReportLinks);
+  $('reportCopy').addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(`To: ${SUPPORT_EMAIL}\nSubject: ${reportSubject()}\n\n${reportText()}`);
+      toast(t('reportCopied', [SUPPORT_EMAIL]));
+    } catch (err) {
+      toast(t('copyFailed'));
+    }
   });
 
   async function refresh() {
     state = await fetchState();
     renderNow();
+    if (!$('report').hidden) updateReportLinks();
   }
 
   function refreshSoon() {

@@ -29,8 +29,10 @@ require(join(EXT, 'shared', 'episode-formats.js'));
 require(join(EXT, 'shared', 'resolver.js'));
 require(join(EXT, 'shared', 'strings.js'));
 const NS = globalThis.PVIMDB;
+const TR = 'tr'; // ana tarayıcı --lang=tr-TR ile açılır
 
 const PLAYER_HTML = await readFile(join(ROOT, 'tests', 'fixtures', 'player.html'), 'utf8');
+const LIST_HTML = await readFile(join(ROOT, 'tests', 'fixtures', 'detail.html'), 'utf8');
 await mkdir(ARTIFACTS, { recursive: true });
 
 // ---- Beklenen değerler: eklentiyle aynı kaynaktan (canlı IMDb) Node tarafında hesaplanır ----
@@ -41,7 +43,7 @@ const nodeResolver = NS.createResolver({
 const expectRating = async (item) => {
   const r = await nodeResolver.resolve(item);
   const subject = r.episode || r.show;
-  return { text: NS.formatRating(subject.rating), result: r };
+  return { text: NS.formatRating(subject.rating, TR), result: r };
 };
 
 // ---- Küçük test altyapısı ----
@@ -191,7 +193,7 @@ try {
       for (let i = 0; i < 40; i++) { if ((await badgeText()) === want) return; await sleep(150); }
       throw new Error(`${label}: simge metni "${await badgeText()}", beklenen "${want}"`);
     };
-    const expected = NS.formatRating(EXP.s1e3.result.episode.rating);
+    const expected = NS.formatRating(EXP.s1e3.result.episode.rating, TR);
     await waitText(expected, 'ilk durum');
     await swEval(browser, extId, () => chrome.storage.sync.set({ settings: { toolbarBadge: false } }));
     await waitText('', 'ayar kapatılınca');
@@ -298,6 +300,41 @@ try {
     await page.bringToFront();
     await waitBadge(page, (b) => b.classes.includes('center') && b.scale === '1', 'ayarların geri alınması', 5000);
     void s;
+  });
+
+  await scenario('Hata bildir / İletişim: sunucusuz e-posta, Gmail ve GitHub bağlantıları', async () => {
+    await page.evaluate(() => { window.__pv.setTitle('The Boys'); window.__pv.setSubtitle('1. Sezon 3 Bölüm Al Bakalım'); });
+    await waitBadge(page, (b) => b.status === 'ok' && b.text.includes(EXP.s1e3.text), 'rozet hazır');
+    const [tabId] = await tabIds();
+    const popup = await browser.newPage();
+    watchConsole(popup, 'popup-report');
+    await popup.setViewport({ width: 360, height: 900 });
+    await popup.goto(`chrome-extension://${extId}/popup/popup.html?tab=${tabId}`, { waitUntil: 'load' });
+    await popup.waitForFunction(() => !document.getElementById('nowBody').hidden, { timeout: 8000 });
+    const label = await popup.$eval('#reportBug', (el) => el.textContent);
+    check(label === 'Hata bildir / İletişim', `düğme metni: ${label}`);
+    await popup.click('#reportBug');
+    await popup.waitForSelector('#report:not([hidden])', { timeout: 3000 });
+    await popup.type('#reportText', 'Rozet geç çıktı, deneme mesajı');
+    const links = await popup.evaluate(() => ({
+      mail: document.getElementById('reportMail').href,
+      gmail: document.getElementById('reportGmail').href,
+      github: document.getElementById('reportGithub').href,
+      or: document.getElementById('reportOr').textContent,
+    }));
+    check(links.mail.startsWith('mailto:contact@mertdemirdoven.me?subject=EpiRate%201.1.0'), `mailto: ${links.mail.slice(0, 80)}`);
+    const body = decodeURIComponent(links.mail.split('&body=')[1]);
+    check(body.startsWith('Rozet geç çıktı, deneme mesajı'), 'kullanıcı metni e-postada yok');
+    check(/Player title: The Boys/.test(body) && /Parsed: S1E3/.test(body) && /Match: The Boys \(2019\) tt1190634/.test(body), `teknik bilgiler eksik:\n${body}`);
+    check(links.gmail.includes('to=contact%40mertdemirdoven.me') && links.gmail.startsWith('https://mail.google.com/'), 'Gmail bağlantısı');
+    check(links.github.startsWith('https://github.com/Guidin9/epirate/issues/new?title='), 'GitHub bağlantısı');
+    check(links.or.includes('contact@mertdemirdoven.me'), 'adres metni');
+    await popup.click('#reportDiag');
+    const withoutDiag = await popup.$eval('#reportMail', (a) => decodeURIComponent(a.href.split('&body=')[1]));
+    check(!/Technical details/.test(withoutDiag), 'kutu kapalıyken teknik bilgi eklenmemeli');
+    await popup.click('#reportDiag');
+    await popup.screenshot({ path: join(ARTIFACTS, '16-hata-bildir.png') });
+    await popup.close();
   });
 
   await scenario('Türkçe dizi adıyla eşleşme (Yüzüklerin Efendisi: Güç Yüzükleri)', async () => {
@@ -408,8 +445,8 @@ try {
     await page.mouse.move(640, 600);
     await page.evaluate(() => window.__pv.hideControls());
     await sleep(500);
-    const exp5 = NS.formatRating(EXP.season.episodes.find((e) => e.episode === 5).rating);
-    const votes5 = NS.formatVotes(EXP.season.episodes.find((e) => e.episode === 5).votes);
+    const exp5 = NS.formatRating(EXP.season.episodes.find((e) => e.episode === 5).rating, TR);
+    const votes5 = NS.formatVotes(EXP.season.episodes.find((e) => e.episode === 5).votes, TR);
     await page.evaluate(() => window.__pv.setSubtitle('1. Sezon 5 Bölüm Ruhun İlacı'));
     await waitBadge(page, (b) => b.status === 'ok' && b.visible && b.text.includes(exp5) && b.text.includes(votes5), 'yeni bölüm puanının görünmesi', 15000);
     const shownAt = Date.now();
@@ -440,6 +477,24 @@ try {
     check(sizes[1].fs >= 12, 'küçük pencerede rozet okunamayacak kadar küçük');
   });
 
+  await scenario('Bölüm listesi (Prime yapısının kopyası, çevrimdışı sayfa)', async () => {
+    const list = await browser.newPage();
+    watchConsole(list, 'mock-list');
+    await list.setRequestInterception(true);
+    list.on('request', (req) => (req.url().startsWith('https://www.primevideo.com/detail/E2E-LIST')
+      ? req.respond({ status: 200, contentType: 'text/html; charset=utf-8', body: LIST_HTML }) : req.continue()));
+    await list.goto('https://www.primevideo.com/detail/E2E-LIST/ref=atv_dp', { waitUntil: 'load' });
+    await list.waitForFunction(() => document.querySelectorAll('[data-pvimdb-chip]').length >= 8, { timeout: 20000 });
+    const chips = await list.evaluate(() => Array.from(document.querySelectorAll('[data-pvimdb-chip]')).map((c) => c.shadowRoot.querySelector('a').textContent));
+    chips.forEach((text, i) => {
+      const exp = NS.formatRating(EXP.season.episodes[i].rating, TR);
+      check(text.includes(exp), `${i + 1}. bölüm etiketi "${text}" (beklenen ${exp})`);
+    });
+    const hrefs = await list.evaluate(() => Array.from(document.querySelectorAll('[data-pvimdb-chip]')).map((c) => c.shadowRoot.querySelector('a').href));
+    check(hrefs.every((h, i) => h === `https://www.imdb.com/title/${EXP.season.episodes[i].id}/`), 'etiket bağlantıları IMDb bölüm sayfasına gitmiyor');
+    await list.close();
+  });
+
   await scenario('Gerçek Prime Video dizi sayfasında bölüm listesi puanları (girişsiz)', async () => {
     const real = await browser.newPage();
     watchConsole(real, 'real-detail');
@@ -462,7 +517,7 @@ try {
     console.log(`     (${chips.length} bölüm; ilk: ${chips[0].heading} → ${chips[0].chip})`);
     check(chips.length === EXP.season.episodes.length, `liste ${chips.length} bölüm, beklenen ${EXP.season.episodes.length}`);
     chips.forEach((c, i) => {
-      const exp = NS.formatRating(EXP.season.episodes[i].rating);
+      const exp = NS.formatRating(EXP.season.episodes[i].rating, TR);
       check(c.chip && c.chip.includes(exp), `${i + 1}. bölüm etiketi "${c.chip}" (beklenen ${exp})`);
     });
     await real.evaluate(() => document.querySelector('li[data-testid="episode-list-item"]').scrollIntoView({ block: 'center' }));
@@ -502,6 +557,55 @@ await scenario('Kurulumda açık Prime sekmesine sayfa yenilemeden yüklenir', a
   } finally {
     await b2.close();
   }
+});
+
+async function withLanguage(lang, fn) {
+  const b = await puppeteer.launch({ ...LAUNCH, args: LAUNCH.args.filter((a) => !a.startsWith('--lang=')).concat(`--lang=${lang}`) });
+  try {
+    const id = await b.installExtension(EXT);
+    await fn(b, id);
+  } finally {
+    await b.close();
+  }
+}
+
+await scenario('İngilizce tarayıcıda arayüz İngilizce (EpiRate, "8.3", "K votes", "Series")', async () => {
+  await withLanguage('en-US', async (b, id) => {
+    const page = await openPlayer(b);
+    await page.evaluate(() => { window.__pv.setLang('en-us'); window.__pv.setSubtitle('Season 1, Ep. 3 Get Some'); });
+    const s = await waitBadge(page, (x) => x.status === 'ok' && x.visible, 'İngilizce puan');
+    const rating = NS.formatRating(EXP.s1e3.result.episode.rating, 'en');
+    check(s.text.includes(rating), `rozet "${s.text}" İngilizce puan biçimini (${rating}) içermiyor`);
+    check(/votes/.test(s.text) && /Series/.test(s.text), `İngilizce metin yok: ${s.text}`);
+    const name = await swEval(b, id, () => chrome.i18n.getMessage('extName'));
+    check(name.startsWith('EpiRate – Episode Ratings'), `eklenti adı: ${name}`);
+    const [tabId] = await swEval(b, id, () => chrome.tabs.query({ url: 'https://www.primevideo.com/*' }).then((t) => t.map((x) => x.id)));
+    const popup = await b.newPage();
+    watchConsole(popup, 'popup-en');
+    await popup.setViewport({ width: 360, height: 640 });
+    await popup.goto(`chrome-extension://${id}/popup/popup.html?tab=${tabId}`, { waitUntil: 'load' });
+    await popup.waitForFunction(() => !document.getElementById('nowBody').hidden, { timeout: 8000 });
+    const texts = await popup.evaluate(() => ({ lang: document.documentElement.lang, settings: document.querySelector('[data-i18n="settingsTitle"]').textContent, mode: document.querySelector('[data-value="controls"]').textContent, now: document.getElementById('now').textContent }));
+    check(texts.settings === 'Settings' && texts.mode === 'With controls', `popup metinleri: ${JSON.stringify(texts)}`);
+    check(texts.now.includes('Season 1 · Episode 3'), `popup bölüm satırı: ${texts.now}`);
+    await popup.screenshot({ path: join(ARTIFACTS, '13-popup-en.png'), fullPage: true });
+    await shot(page, '14-en-rozet.png');
+  });
+});
+
+await scenario('Arapça tarayıcıda popup sağdan sola, metinler Arapça', async () => {
+  await withLanguage('ar', async (b, id) => {
+    const popup = await b.newPage();
+    watchConsole(popup, 'popup-ar');
+    await popup.setViewport({ width: 360, height: 760 });
+    await popup.goto(`chrome-extension://${id}/popup/popup.html`, { waitUntil: 'load' });
+    await sleep(500);
+    const info = await popup.evaluate(() => ({ dir: document.documentElement.dir, settings: document.querySelector('[data-i18n="settingsTitle"]').textContent }));
+    check(info.dir === 'rtl', `yön: ${info.dir}`);
+    check(info.settings === 'الإعدادات', `başlık: ${info.settings}`);
+    // Sağdan sola sayfalarda tam sayfa görüntüsü boş çıkıyor: sabit görünüm boyutuyla çek.
+    await popup.screenshot({ path: join(ARTIFACTS, '15-popup-ar.png') });
+  });
 });
 
 await scenario('Konsolda eklenti hatası yok', async () => {

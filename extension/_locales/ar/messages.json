@@ -1,0 +1,353 @@
+{
+  "extName": {
+    "message": "EpiRate – تقييمات الحلقات أثناء المشاهدة",
+    "description": "Extension name (max 75 chars)"
+  },
+  "extShortName": {
+    "message": "EpiRate",
+    "description": "Short name"
+  },
+  "extDescription": {
+    "message": "يعرض تقييم IMDb للحلقة التي تشاهدها على Prime Video داخل المشغّل وفي قائمة الحلقات.",
+    "description": "Extension description (max 132 chars)"
+  },
+  "actionTitle": {
+    "message": "EpiRate",
+    "description": "Toolbar button tooltip"
+  },
+  "cmdToggle": {
+    "message": "إظهار / إخفاء شارة التقييم",
+    "description": "Keyboard shortcut description"
+  },
+  "loading": {
+    "message": "جارٍ البحث عن التقييم…"
+  },
+  "noRating": {
+    "message": "لا يوجد تقييم بعد"
+  },
+  "notFound": {
+    "message": "غير موجود على IMDb"
+  },
+  "episodeNotFound": {
+    "message": "الحلقة غير موجودة على IMDb"
+  },
+  "error": {
+    "message": "تعذّر الوصول إلى IMDb"
+  },
+  "retry": {
+    "message": "إعادة المحاولة"
+  },
+  "votesCount": {
+    "message": "$COUNT$ صوت",
+    "description": "Vote count; COUNT is already formatted (e.g. 30K)",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "series": {
+    "message": "المسلسل",
+    "description": "Label before the overall series rating"
+  },
+  "seasonEpisode": {
+    "message": "الموسم $SEASON$ · الحلقة $EPISODE$",
+    "placeholders": {
+      "season": {
+        "content": "$1"
+      },
+      "episode": {
+        "content": "$2"
+      }
+    }
+  },
+  "episodeN": {
+    "message": "الحلقة $NUM$",
+    "placeholders": {
+      "num": {
+        "content": "$1"
+      }
+    }
+  },
+  "seasonChartTitle": {
+    "message": "تقييمات الموسم $SEASON$",
+    "placeholders": {
+      "season": {
+        "content": "$1"
+      }
+    }
+  },
+  "openImdb": {
+    "message": "فتح على IMDb"
+  },
+  "openSeries": {
+    "message": "صفحة المسلسل"
+  },
+  "wrongMatch": {
+    "message": "مسلسل خاطئ؟ صحّحه من أيقونة EpiRate في شريط الأدوات."
+  },
+  "matchedByTitle": {
+    "message": "تمت المطابقة حسب عنوان الحلقة"
+  },
+  "matchedByOverride": {
+    "message": "مطابقة اخترتها يدويًا"
+  },
+  "close": {
+    "message": "إغلاق"
+  },
+  "badgeLabel": {
+    "message": "تقييم IMDb"
+  },
+  "panelLabel": {
+    "message": "تفاصيل IMDb"
+  },
+  "popupSubtitle": {
+    "message": "تقييمات الحلقات لـ Prime Video"
+  },
+  "popupLoading": {
+    "message": "جارٍ التحميل…"
+  },
+  "notPrime": {
+    "message": "هذه الصفحة ليست Prime Video. افتح حلقة على Prime Video وسيظهر تقييمها هنا أيضًا."
+  },
+  "idleHint": {
+    "message": "شغّل حلقة أو افتح صفحة مسلسل وستظهر التقييمات هنا."
+  },
+  "kickerEpisode": {
+    "message": "تشاهد الآن"
+  },
+  "kickerMovie": {
+    "message": "تشاهد الآن · فيلم"
+  },
+  "kickerShow": {
+    "message": "تشاهد الآن"
+  },
+  "listStatusOk": {
+    "message": "الموسم $SEASON$ · تقييمات $COUNT$ حلقة في القائمة",
+    "placeholders": {
+      "season": {
+        "content": "$1"
+      },
+      "count": {
+        "content": "$2"
+      }
+    }
+  },
+  "listLoading": {
+    "message": "جارٍ تحميل التقييمات…"
+  },
+  "seasonNotFound": {
+    "message": "هذا الموسم غير موجود على IMDb بعد"
+  },
+  "seriesOverall": {
+    "message": "التقييم العام للمسلسل"
+  },
+  "fixToggle": {
+    "message": "مطابقة خاطئة؟ صحّحها"
+  },
+  "fixTitle": {
+    "message": "اختر المسلسل أو الفيلم الصحيح"
+  },
+  "fixFor": {
+    "message": "الاسم على Prime: «$TITLE$». سيتم تذكّر اختيارك لهذا الاسم.",
+    "placeholders": {
+      "title": {
+        "content": "$1"
+      }
+    }
+  },
+  "searchPlaceholder": {
+    "message": "ابحث في IMDb…"
+  },
+  "searchButton": {
+    "message": "بحث"
+  },
+  "searching": {
+    "message": "جارٍ البحث…"
+  },
+  "noResults": {
+    "message": "لا توجد نتائج. جرّب اسمًا آخر أو الاسم الإنجليزي."
+  },
+  "pick": {
+    "message": "اختيار"
+  },
+  "currentPick": {
+    "message": "الحالي"
+  },
+  "backToAuto": {
+    "message": "العودة إلى المطابقة التلقائية"
+  },
+  "saved": {
+    "message": "تم الحفظ"
+  },
+  "saveFailed": {
+    "message": "تعذّر الحفظ"
+  },
+  "revertedAuto": {
+    "message": "تمت العودة إلى المطابقة التلقائية"
+  },
+  "revertFailed": {
+    "message": "تعذّر التراجع"
+  },
+  "settingsTitle": {
+    "message": "الإعدادات"
+  },
+  "whenLabel": {
+    "message": "متى يظهر؟"
+  },
+  "modeControls": {
+    "message": "مع أدوات التحكم"
+  },
+  "modeStart": {
+    "message": "في بداية الحلقة"
+  },
+  "modeAlways": {
+    "message": "دائمًا"
+  },
+  "positionLabel": {
+    "message": "الموضع"
+  },
+  "posTopLeft": {
+    "message": "أعلى اليسار"
+  },
+  "posTopRight": {
+    "message": "أعلى اليمين"
+  },
+  "posBottomLeft": {
+    "message": "أسفل اليسار"
+  },
+  "posBottomRight": {
+    "message": "أسفل اليمين"
+  },
+  "posUnderTitle": {
+    "message": "أسفل العنوان"
+  },
+  "underTitleShort": {
+    "message": "أسفل العنوان"
+  },
+  "screenTitle": {
+    "message": "العنوان",
+    "description": "Label on the mini player preview in settings"
+  },
+  "sizeLabel": {
+    "message": "الحجم"
+  },
+  "sizeS": {
+    "message": "صغير"
+  },
+  "sizeM": {
+    "message": "متوسط"
+  },
+  "sizeL": {
+    "message": "كبير"
+  },
+  "tVotes": {
+    "message": "عدد الأصوات"
+  },
+  "tSeries": {
+    "message": "تقييم المسلسل"
+  },
+  "tChart": {
+    "message": "مخطط الموسم عند النقر"
+  },
+  "tList": {
+    "message": "التقييمات في قائمة الحلقات"
+  },
+  "tMovies": {
+    "message": "إظهار للأفلام أيضًا"
+  },
+  "tToolbar": {
+    "message": "التقييم على الأيقونة"
+  },
+  "clearCache": {
+    "message": "مسح ذاكرة التخزين المؤقت"
+  },
+  "cacheCleared": {
+    "message": "تم مسح الذاكرة المؤقتة ($COUNT$)",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "clearFailed": {
+    "message": "تعذّر المسح"
+  },
+  "copyDiag": {
+    "message": "نسخ بيانات التشخيص"
+  },
+  "copied": {
+    "message": "تم النسخ إلى الحافظة"
+  },
+  "copyFailed": {
+    "message": "تعذّر النسخ"
+  },
+  "testConn": {
+    "message": "اختبار الاتصال بـ IMDb"
+  },
+  "testing": {
+    "message": "جارٍ الاختبار…"
+  },
+  "connOk": {
+    "message": "الاتصال بـ IMDb يعمل ($MS$ ms)",
+    "placeholders": {
+      "ms": {
+        "content": "$1"
+      }
+    }
+  },
+  "connFail": {
+    "message": "خطأ في الاتصال: $CODE$",
+    "placeholders": {
+      "code": {
+        "content": "$1"
+      }
+    }
+  },
+  "shortcutHint": {
+    "message": "إظهار/إخفاء الشارة:"
+  },
+  "reportBug": {
+    "message": "الإبلاغ عن مشكلة / تواصل معنا"
+  },
+  "reportIntro": {
+    "message": "وجدت مشكلة أو لديك اقتراح؟ اكتبه أدناه. لا يُرسل أي شيء تلقائيًا: يُفتح في بريدك وترسله بنفسك."
+  },
+  "reportPlaceholder": {
+    "message": "ماذا حدث؟ أي مسلسل وأي حلقة؟ أو اكتب رسالتك فقط."
+  },
+  "reportIncludeDiag": {
+    "message": "إرفاق التفاصيل التقنية (الإصدار، اللغة، المسلسل والحلقة المكتشفان)"
+  },
+  "reportEmail": {
+    "message": "فتح في تطبيق البريد"
+  },
+  "reportGmail": {
+    "message": "فتح في Gmail"
+  },
+  "reportCopy": {
+    "message": "نسخ التقرير"
+  },
+  "reportCopied": {
+    "message": "تم نسخ التقرير — أرسله إلى $EMAIL$",
+    "placeholders": {
+      "email": {
+        "content": "$1"
+      }
+    }
+  },
+  "reportOrWrite": {
+    "message": "أو راسلنا مباشرة على $EMAIL$",
+    "placeholders": {
+      "email": {
+        "content": "$1"
+      }
+    }
+  },
+  "reportGithub": {
+    "message": "الإبلاغ على GitHub"
+  },
+  "disclaimer": {
+    "message": "غير تابع لـ IMDb أو Amazon. بيانات التقييم: IMDb."
+  }
+}

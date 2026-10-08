@@ -1,98 +1,89 @@
-# Prime Video IMDb Puanı
+# EpiRate
 
-Prime Video'da izlediğin bölümün IMDb puanını oynatıcının üstünde, Prime'ın kendi başlığının hemen altında gösteren kişisel tarayıcı eklentisi. Brave, Chrome, Edge gibi Chromium tabanlı tarayıcılarda çalışır.
+**IMDb episode ratings while you watch.** A browser extension for Prime Video. It works in Chrome, Brave, Edge and other Chromium-based browsers.
 
-![Oynatıcıda IMDb rozeti](docs/oynatici-rozet.png)
+[Türkçe](README.tr.md) · [Privacy](PRIVACY.md) · [Report a bug](https://github.com/Guidin9/epirate/issues)
 
-## Neler yapıyor?
+![The episode's IMDb rating, right under the title](store/screenshots/en/1-badge.png)
 
-- **Oynatıcıda bölüm puanı:** `★ 8,3 /10 · 30 B oy · Dizi 8,5`. Varsayılan olarak Prime'ın kontrolleriyle birlikte belirir ve kaybolur, yani izlerken ekranda bir şey kalmaz.
-- **Rozete tıklayınca panel:** bölümün IMDb adı, yayın tarihi, dizinin genel puanı ve sezondaki tüm bölümlerin **mini puan grafiği**. Şu anki bölüm vurgulanır; sonraki bölümlerin adları spoiler olmasın diye gizlenir. "IMDb'de aç" sayfayı arka plan sekmesinde açar, tam ekrandan çıkarmaz.
-- **Dizi sayfasındaki bölüm listesinde** her bölümün altında IMDb puanı ve oy sayısı.
-- **Filmlerde** filmin puanı.
-- **Araç çubuğu simgesinde** o sekmedeki bölümün puanı.
-- Bölüm otomatik değişince (sonraki bölüm) puan da kendiliğinden güncellenir. Tam ekranda da çalışır.
+## Features
 
-![Sezon grafiği paneli](docs/oynatici-panel.png)
+- **The episode's rating in the player:** `★ 8.3/10 · 30.5K votes · Series 8.5`. It sits under Prime's own title and appears and fades with the player controls, so nothing covers the picture while you watch.
+- **Season at a glance:** click the badge to see a mini chart of every episode's rating. Titles of upcoming episodes stay hidden, so there are no spoilers. "Open on IMDb" opens a background tab and doesn't exit fullscreen.
+- **Episode list ratings:** on series pages, every episode shows its rating and vote count before you press play.
+- **Movies too,** plus the current rating on the toolbar icon.
+- **Smart matching:**
+  - Finds the right show even with localized titles, e.g. "Yüzüklerin Efendisi: Güç Yüzükleri" → *The Rings of Power*.
+  - Tells same-named shows apart.
+  - Wrong match? Fix it in two clicks; your choice is remembered.
+- **Your way:**
+  - When it shows: with the controls, at episode start, or always.
+  - Position (under the title or any corner) and size.
+  - <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>I</kbd> hides it.
+- **Languages:**
+  - Interface in 12 languages: English, Türkçe, Deutsch, Español, Français, Italiano, Português (BR), Polski, Nederlands, 日本語, हिन्दी, العربية.
+  - Reads Prime Video's episode line in 34 languages.
 
-![Dizi sayfasında bölüm puanları](docs/bolum-listesi.png)
+![Click for the whole season — no spoilers](store/screenshots/en/2-season.png)
 
-## Brave'e kurulum
+![Ratings in the episode list, before you press play](store/screenshots/en/3-episode-list.png)
 
-1. Adres çubuğuna `brave://extensions` yaz.
-2. Sağ üstteki **Geliştirici modu**nu aç.
-3. **Paketlenmemiş öğe yükle**'ye tıkla ve bu klasördeki **`extension`** klasörünü seç:
-   `C:\Users\anils\Desktop\Tarayıcı eklentisi\extension`
-4. İsteğe bağlı: araç çubuğundaki yapboz simgesinden eklentiyi **sabitle**. Simgedeki puan ve ayarlar oradan görünür.
+## Install
 
-Açık bir Prime Video sekmen varsa sayfayı yenilemene gerek yok; eklenti kurulduğu anda o sekmede de çalışmaya başlar.
+- **Chrome Web Store:** coming soon.
+- **Manual (developer mode):**
+  1. Download or clone this repository.
+  2. Open `chrome://extensions` (Brave: `brave://extensions`) and turn on **Developer mode**.
+  3. Click **Load unpacked** and select the `extension` folder.
 
-## Kullanım ve ayarlar
+  If a Prime Video tab is already open, there's no need to reload it. EpiRate starts there right away.
 
-Araç çubuğundaki simgeye tıkla:
+## Roadmap
 
-![Popup](docs/popup.png)
+Support for **more streaming platforms** is coming in upcoming versions.
 
-| Ayar | Seçenekler |
-|---|---|
-| Ne zaman görünsün? | **Kontrollerle** (varsayılan) · **Bölüm başında** (yeni bölümde 10 sn, sonra kontrollerle) · **Hep açık** |
-| Konum | **Başlığın altı** (varsayılan) · sol üst · sağ üst · sol alt · sağ alt |
-| Boyut | Küçük · Orta · Büyük |
-| Göstergeler | Oy sayısı, dizinin genel puanı, tıklayınca sezon grafiği, bölüm listesinde puanlar, filmlerde göster, simgede puan |
+## Feedback & bug reports
 
-- **Kısayol:** `Alt+Shift+I` rozeti gizler ya da gösterir. `brave://extensions/shortcuts` adresinden değiştirebilirsin.
-- **Yanlış dizi mi eşleşti?** Popup'ta **Yanlış eşleşme mi? Düzelt** düğmesine bas, IMDb'de ara ve doğrusunu **Seç**. Seçimin o dizi adı için kalıcı olarak hatırlanır. **Otomatik eşleşmeye dön** ile geri alabilirsin. Örneğin aynı adlı iki "The Grand Tour" var: 2016 ve 2026.
+- In the extension: open the popup and click **Report a bug / Contact**. It prepares an email with optional technical details. Nothing is sent automatically.
+- Email: [contact@mertdemirdoven.me](mailto:contact@mertdemirdoven.me)
+- GitHub: [issues](https://github.com/Guidin9/epirate/issues)
 
-## Nasıl çalışıyor?
+## Privacy
 
-1. Prime oynatıcısındaki dizi adını (`atvwebplayersdk-title-text`) ve bölüm satırını (`atvwebplayersdk-subtitle-text`) okur. Türkçe arayüzdeki bölüm satırı "1. Sezon 3 Bölüm Bölüm Adı" biçimindedir. Bu kalıp, Prime'ın kendi dil dosyalarından alınan **34 dil** için tanımlı.
-2. IMDb'de diziyi arar. Türkçe adlar da bulunur; örneğin "Yüzüklerin Efendisi: Güç Yüzükleri". Ardından o sezonun bütün bölümlerini tek istekte çeker.
-3. Doğru diziyi; adın benzerliği, popülerlik, yıl, Prime'ın gösterdiği dizi puanı ve "bu sezonda bu bölüm var mı" kontrolüyle seçer.
-4. Sonuçlar önbelleğe alınır: sezon verisi 12 saat (yeni yayınlanan sezonlarda 3 saat), eşleşmeler 30 gün. Aynı sezonun sonraki bölümleri anında gelir.
+- No account, no ads, no tracking.
+- EpiRate only sends the title you're watching to IMDb to look up its rating, and caches results on your device.
 
-API anahtarı gerekmez. Eklenti yalnızca dizi/film adlarını IMDb'ye gönderir; başka hiçbir yere veri göndermez, iz sürmez. Popup'taki elle düzeltme aramasında sonuçların küçük afişleri IMDb'nin görsel sunucusundan (`m.media-amazon.com`) yüklenir. Eklentinin erişim izni yalnızca `primevideo.com` ve IMDb adresleriyle sınırlıdır.
+Details: [PRIVACY.md](PRIVACY.md)
 
-> IMDb verileri yalnızca kişisel, ticari olmayan kullanım içindir. Bu eklenti kişisel kullanım için yazıldı; mağazada yayınlanmamalıdır.
+## Development
 
-## Sorun giderme
-
-- **Rozet çıkmıyor:** Popup'ı aç. "Şu an izlenen bölüm" kartı ne algılandığını gösterir. **Tanılama bilgisini kopyala**; ham başlık, bölüm satırı, ayrıştırma sonucu ve eşleşme adaylarını panoya kopyalar.
-- **"IMDb'ye ulaşılamadı":** Popup'taki **IMDb bağlantısını test et** düğmesine bas. Rozete tıklamak da yeniden dener.
-- **Puan eski görünüyor:** **Önbelleği temizle**.
-- **Bölüm IMDb'de yok:** Çok yeni bölümlerde ya da Prime ile IMDb'nin bölüm numaralandırması farklı olduğunda olur. Bu durumda dizinin genel puanı gösterilir.
-
-## Bilinen sınırlamalar
-
-- Prime oynatıcısı giriş ve DRM gerektirdiği için otomatik testlerde gerçek oynatıcı yerine onun DOM yapısının birebir kopyası kullanılır. Bu yapı, Prime'ın canlı oynatıcı kodundan çıkarıldı. Dizi sayfasındaki bölüm listesi ise gerçek Prime sitesinde test edilir.
-- Prime ile IMDb'nin bölüm numaralandırması farklı olan dizilerde (bazı animeler, bölünmüş sezonlar) bölüm bulunamayabilir. Bu durumda dizinin genel puanı gösterilir; İngilizce arayüzde bölüm adıyla eşleştirme de denenir.
-- Aynı adlı dizilerde Prime'ın dizi sayfasındaki yıl ve IMDb puanı ipucu olarak kullanılır. "İzlemeye devam et"ten açılınca bu ipuçları olmayabilir; yanlış eşleşmeyi popup'tan bir kez düzeltmen yeter.
-- IMDb'nin bu uç noktaları resmi bir API değildir; değişirse eklenti hata durumunu gösterir.
-
-## Geliştirme
-
-Gereksinim: Node.js 22+. Testler **yalnızca görünmez (headless) Chrome for Testing** ile çalışır; tarayıcı penceresi açılmaz, kişisel Brave/Chrome profiline dokunulmaz.
+Requires Node.js 22+. Tests run **only in a headless Chrome for Testing** with a temporary profile, so your own browser is never touched.
 
 ```bash
 npm install
-npx puppeteer browsers install chrome   # test tarayıcısı .cache/ klasörüne iner
-npm run check        # sözdizimi + manifest + dosya bütünlüğü
-npm test             # birim testleri (139 test, bağımlılıksız, node:test)
-npm run test:live    # canlı IMDb entegrasyon testleri
-npm run test:e2e     # uçtan uca (22 senaryo): headless Chrome + eklenti + Prime oynatıcı kopyası + gerçek Prime dizi sayfası
-npm run sync:prime   # Prime'ın dil dosyalarından bölüm kalıplarını yeniden üretir, sınıf adlarını doğrular
-npm run icons        # simgeleri yeniden çizer
+npx puppeteer browsers install chrome   # test browser goes into .cache/
+npm run check        # syntax, manifest, locale files
+npm test             # unit tests (node:test, no dependencies)
+npm run test:live    # live IMDb integration tests
+npm run test:e2e     # end-to-end: headless Chrome + extension + Prime player replica + real Prime series page
+npm run package      # Chrome Web Store zip → dist/
+npm run locales      # rebuild _locales from tools/i18n/messages.mjs
+npm run store:assets # store screenshots (12 languages) and promo tiles
+npm run store:texts  # store listing texts (12 languages)
+npm run sync:prime   # refresh Prime's episode-line formats and verify its player class names
 ```
 
-Klasörler:
+| Folder | Contents |
+|---|---|
+| `extension/` | The extension itself; no build step. |
+| `extension/background.js` | IMDb requests, cache, toolbar badge. |
+| `extension/shared/` | Shared modules: parsing, matching, IMDb client, cache, settings, i18n. |
+| `extension/content/` | Prime Video adapter, player badge, episode list, controller. |
+| `extension/popup/` | Settings, manual match fixing, bug report. |
+| `tests/` | `unit/`, `live/`, `e2e/`, `fixtures/` (Prime page replicas). |
+| `tools/` | Locale build, Prime format sync, packaging, store assets. |
+| `store/` | Chrome Web Store texts, screenshots, upload guide. |
 
-```
-extension/          Tarayıcıya yüklenen eklenti (build adımı yok)
-  background.js     IMDb istekleri, önbellek, simge rozeti
-  shared/           Ortak modüller (ayrıştırma, eşleştirme, IMDb istemcisi, önbellek, ayarlar)
-  content/          Prime Video adaptörü, oynatıcı rozeti, bölüm listesi, kontrolcü
-  popup/            Ayarlar ve elle düzeltme
-tests/              unit/ · live/ · e2e/ · fixtures/ (Prime oynatıcısının DOM kopyası)
-tools/              Prime kalıp senkronu, simge üretimi, statik kontrol
-```
+## Disclaimer
 
-Prime arayüzünü değiştirirse önce `npm run sync:prime` çalıştır. Sınıf adları değişmişse bunu raporlar.
+EpiRate is an independent project and is not affiliated with, endorsed or sponsored by IMDb or Amazon. IMDb and Prime Video are trademarks of their respective owners. Rating data comes from IMDb.

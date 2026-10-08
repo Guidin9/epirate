@@ -5,3 +5,11 @@ tests/artifacts/
 # Brave/Chrome "Paketle" çıktıları — .pem özel imza anahtarıdır, asla depoya girmez
 *.pem
 *.crx
+
+# Mağaza paketi (npm run package)
+dist/
+
+# Mağaza ekran görüntüleri: depoda yalnızca İngilizce ve Türkçe; diğerleri `npm run store:assets` ile üretilir
+store/screenshots/*
+!store/screenshots/en/
+!store/screenshots/tr/

@@ -1,0 +1,353 @@
+{
+  "extName": {
+    "message": "EpiRate – İzlerken Bölüm Puanları",
+    "description": "Extension name (max 75 chars)"
+  },
+  "extShortName": {
+    "message": "EpiRate",
+    "description": "Short name"
+  },
+  "extDescription": {
+    "message": "Prime Video'da izlediğin bölümün IMDb puanını oynatıcıda ve bölüm listesinde gösterir.",
+    "description": "Extension description (max 132 chars)"
+  },
+  "actionTitle": {
+    "message": "EpiRate",
+    "description": "Toolbar button tooltip"
+  },
+  "cmdToggle": {
+    "message": "Puan rozetini gizle / göster",
+    "description": "Keyboard shortcut description"
+  },
+  "loading": {
+    "message": "Puan aranıyor…"
+  },
+  "noRating": {
+    "message": "Henüz puan yok"
+  },
+  "notFound": {
+    "message": "IMDb'de bulunamadı"
+  },
+  "episodeNotFound": {
+    "message": "Bölüm IMDb'de yok"
+  },
+  "error": {
+    "message": "IMDb’ye ulaşılamadı"
+  },
+  "retry": {
+    "message": "Tekrar dene"
+  },
+  "votesCount": {
+    "message": "$COUNT$ oy",
+    "description": "Vote count; COUNT is already formatted (e.g. 30K)",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "series": {
+    "message": "Dizi",
+    "description": "Label before the overall series rating"
+  },
+  "seasonEpisode": {
+    "message": "$SEASON$. Sezon · $EPISODE$. Bölüm",
+    "placeholders": {
+      "season": {
+        "content": "$1"
+      },
+      "episode": {
+        "content": "$2"
+      }
+    }
+  },
+  "episodeN": {
+    "message": "$NUM$. Bölüm",
+    "placeholders": {
+      "num": {
+        "content": "$1"
+      }
+    }
+  },
+  "seasonChartTitle": {
+    "message": "$SEASON$. Sezon puanları",
+    "placeholders": {
+      "season": {
+        "content": "$1"
+      }
+    }
+  },
+  "openImdb": {
+    "message": "IMDb'de aç"
+  },
+  "openSeries": {
+    "message": "Dizi sayfası"
+  },
+  "wrongMatch": {
+    "message": "Yanlış dizi mi? Araç çubuğundaki EpiRate simgesinden düzeltebilirsin."
+  },
+  "matchedByTitle": {
+    "message": "Bölüm adıyla eşleştirildi"
+  },
+  "matchedByOverride": {
+    "message": "Elle seçilen eşleşme"
+  },
+  "close": {
+    "message": "Kapat"
+  },
+  "badgeLabel": {
+    "message": "IMDb puanı"
+  },
+  "panelLabel": {
+    "message": "IMDb ayrıntıları"
+  },
+  "popupSubtitle": {
+    "message": "Prime Video için bölüm puanları"
+  },
+  "popupLoading": {
+    "message": "Yükleniyor…"
+  },
+  "notPrime": {
+    "message": "Bu sekme Prime Video değil. Prime Video’da bir bölüm açınca puan burada da görünür."
+  },
+  "idleHint": {
+    "message": "Bir bölüm oynatınca ya da bir dizinin sayfasını açınca puanlar burada görünür."
+  },
+  "kickerEpisode": {
+    "message": "Şu an izlenen bölüm"
+  },
+  "kickerMovie": {
+    "message": "Şu an izlenen film"
+  },
+  "kickerShow": {
+    "message": "Şu an izlenen içerik"
+  },
+  "listStatusOk": {
+    "message": "$SEASON$. Sezon · $COUNT$ bölümün puanı listede gösteriliyor",
+    "placeholders": {
+      "season": {
+        "content": "$1"
+      },
+      "count": {
+        "content": "$2"
+      }
+    }
+  },
+  "listLoading": {
+    "message": "Puanlar yükleniyor…"
+  },
+  "seasonNotFound": {
+    "message": "Bu sezon IMDb’de bulunamadı"
+  },
+  "seriesOverall": {
+    "message": "dizinin genel puanı"
+  },
+  "fixToggle": {
+    "message": "Yanlış eşleşme mi? Düzelt"
+  },
+  "fixTitle": {
+    "message": "Doğru diziyi/filmi seç"
+  },
+  "fixFor": {
+    "message": "Prime’daki ad: “$TITLE$”. Seçimin bu ad için kalıcı olarak hatırlanır.",
+    "placeholders": {
+      "title": {
+        "content": "$1"
+      }
+    }
+  },
+  "searchPlaceholder": {
+    "message": "IMDb'de ara…"
+  },
+  "searchButton": {
+    "message": "Ara"
+  },
+  "searching": {
+    "message": "Aranıyor…"
+  },
+  "noResults": {
+    "message": "Sonuç yok. Farklı ya da İngilizce adı deneyin."
+  },
+  "pick": {
+    "message": "Seç"
+  },
+  "currentPick": {
+    "message": "Şu anki"
+  },
+  "backToAuto": {
+    "message": "Otomatik eşleşmeye dön"
+  },
+  "saved": {
+    "message": "Kaydedildi"
+  },
+  "saveFailed": {
+    "message": "Kaydedilemedi"
+  },
+  "revertedAuto": {
+    "message": "Otomatik eşleşmeye dönüldü"
+  },
+  "revertFailed": {
+    "message": "Geri alınamadı"
+  },
+  "settingsTitle": {
+    "message": "Ayarlar"
+  },
+  "whenLabel": {
+    "message": "Ne zaman görünsün?"
+  },
+  "modeControls": {
+    "message": "Kontrollerle"
+  },
+  "modeStart": {
+    "message": "Bölüm başında"
+  },
+  "modeAlways": {
+    "message": "Hep açık"
+  },
+  "positionLabel": {
+    "message": "Konum"
+  },
+  "posTopLeft": {
+    "message": "Sol üst"
+  },
+  "posTopRight": {
+    "message": "Sağ üst"
+  },
+  "posBottomLeft": {
+    "message": "Sol alt"
+  },
+  "posBottomRight": {
+    "message": "Sağ alt"
+  },
+  "posUnderTitle": {
+    "message": "Başlığın altında"
+  },
+  "underTitleShort": {
+    "message": "Başlık altı"
+  },
+  "screenTitle": {
+    "message": "Dizi Adı",
+    "description": "Label on the mini player preview in settings"
+  },
+  "sizeLabel": {
+    "message": "Boyut"
+  },
+  "sizeS": {
+    "message": "Küçük"
+  },
+  "sizeM": {
+    "message": "Orta"
+  },
+  "sizeL": {
+    "message": "Büyük"
+  },
+  "tVotes": {
+    "message": "Oy sayısı"
+  },
+  "tSeries": {
+    "message": "Dizinin genel puanı"
+  },
+  "tChart": {
+    "message": "Tıklayınca sezon grafiği"
+  },
+  "tList": {
+    "message": "Bölüm listesinde puanlar"
+  },
+  "tMovies": {
+    "message": "Filmlerde de göster"
+  },
+  "tToolbar": {
+    "message": "Simgede puan"
+  },
+  "clearCache": {
+    "message": "Önbelleği temizle"
+  },
+  "cacheCleared": {
+    "message": "Önbellek temizlendi ($COUNT$)",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "clearFailed": {
+    "message": "Temizlenemedi"
+  },
+  "copyDiag": {
+    "message": "Tanılama bilgisini kopyala"
+  },
+  "copied": {
+    "message": "Panoya kopyalandı"
+  },
+  "copyFailed": {
+    "message": "Kopyalanamadı"
+  },
+  "testConn": {
+    "message": "IMDb bağlantısını test et"
+  },
+  "testing": {
+    "message": "Test ediliyor…"
+  },
+  "connOk": {
+    "message": "IMDb bağlantısı tamam ($MS$ ms)",
+    "placeholders": {
+      "ms": {
+        "content": "$1"
+      }
+    }
+  },
+  "connFail": {
+    "message": "Bağlantı hatası: $CODE$",
+    "placeholders": {
+      "code": {
+        "content": "$1"
+      }
+    }
+  },
+  "shortcutHint": {
+    "message": "Rozeti gizle/göster:"
+  },
+  "reportBug": {
+    "message": "Hata bildir / İletişim"
+  },
+  "reportIntro": {
+    "message": "Bir hata mı buldun, önerin mi var? Aşağıya yaz. Hiçbir şey otomatik gönderilmez: e-postanda açılır, gönderen sensin."
+  },
+  "reportPlaceholder": {
+    "message": "Ne oldu? Hangi dizi ve bölüm? Ya da mesajını yaz."
+  },
+  "reportIncludeDiag": {
+    "message": "Teknik bilgileri ekle (sürüm, dil, algılanan dizi ve bölüm)"
+  },
+  "reportEmail": {
+    "message": "E-posta uygulamasında aç"
+  },
+  "reportGmail": {
+    "message": "Gmail'de aç"
+  },
+  "reportCopy": {
+    "message": "Raporu kopyala"
+  },
+  "reportCopied": {
+    "message": "Rapor kopyalandı — $EMAIL$ adresine gönder",
+    "placeholders": {
+      "email": {
+        "content": "$1"
+      }
+    }
+  },
+  "reportOrWrite": {
+    "message": "Ya da doğrudan $EMAIL$ adresine yaz",
+    "placeholders": {
+      "email": {
+        "content": "$1"
+      }
+    }
+  },
+  "reportGithub": {
+    "message": "GitHub'da bildir"
+  },
+  "disclaimer": {
+    "message": "IMDb veya Amazon ile bağlantılı değildir. Puan verisi: IMDb."
+  }
+}

@@ -1,0 +1,353 @@
+{
+  "extName": {
+    "message": "EpiRate – 視聴中のエピソード評価",
+    "description": "Extension name (max 75 chars)"
+  },
+  "extShortName": {
+    "message": "EpiRate",
+    "description": "Short name"
+  },
+  "extDescription": {
+    "message": "Prime Video で視聴中のエピソードの IMDb 評価を、プレーヤーとエピソード一覧に表示します。",
+    "description": "Extension description (max 132 chars)"
+  },
+  "actionTitle": {
+    "message": "EpiRate",
+    "description": "Toolbar button tooltip"
+  },
+  "cmdToggle": {
+    "message": "評価バッジの表示 / 非表示",
+    "description": "Keyboard shortcut description"
+  },
+  "loading": {
+    "message": "評価を検索中…"
+  },
+  "noRating": {
+    "message": "まだ評価なし"
+  },
+  "notFound": {
+    "message": "IMDb で見つかりません"
+  },
+  "episodeNotFound": {
+    "message": "IMDb にこのエピソードはありません"
+  },
+  "error": {
+    "message": "IMDb に接続できません"
+  },
+  "retry": {
+    "message": "再試行"
+  },
+  "votesCount": {
+    "message": "$COUNT$票",
+    "description": "Vote count; COUNT is already formatted (e.g. 30K)",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "series": {
+    "message": "シリーズ",
+    "description": "Label before the overall series rating"
+  },
+  "seasonEpisode": {
+    "message": "シーズン$SEASON$ · 第$EPISODE$話",
+    "placeholders": {
+      "season": {
+        "content": "$1"
+      },
+      "episode": {
+        "content": "$2"
+      }
+    }
+  },
+  "episodeN": {
+    "message": "第$NUM$話",
+    "placeholders": {
+      "num": {
+        "content": "$1"
+      }
+    }
+  },
+  "seasonChartTitle": {
+    "message": "シーズン$SEASON$の評価",
+    "placeholders": {
+      "season": {
+        "content": "$1"
+      }
+    }
+  },
+  "openImdb": {
+    "message": "IMDb で開く"
+  },
+  "openSeries": {
+    "message": "シリーズのページ"
+  },
+  "wrongMatch": {
+    "message": "作品が違いますか？ツールバーの EpiRate アイコンから修正できます。"
+  },
+  "matchedByTitle": {
+    "message": "エピソード名で照合"
+  },
+  "matchedByOverride": {
+    "message": "手動で選んだ作品"
+  },
+  "close": {
+    "message": "閉じる"
+  },
+  "badgeLabel": {
+    "message": "IMDb 評価"
+  },
+  "panelLabel": {
+    "message": "IMDb の詳細"
+  },
+  "popupSubtitle": {
+    "message": "Prime Video のエピソード評価"
+  },
+  "popupLoading": {
+    "message": "読み込み中…"
+  },
+  "notPrime": {
+    "message": "このタブは Prime Video ではありません。Prime Video でエピソードを開くと、ここにも評価が表示されます。"
+  },
+  "idleHint": {
+    "message": "エピソードを再生するかシリーズのページを開くと、ここに評価が表示されます。"
+  },
+  "kickerEpisode": {
+    "message": "視聴中のエピソード"
+  },
+  "kickerMovie": {
+    "message": "視聴中の映画"
+  },
+  "kickerShow": {
+    "message": "視聴中の作品"
+  },
+  "listStatusOk": {
+    "message": "シーズン$SEASON$ · 一覧の$COUNT$話に評価を表示中",
+    "placeholders": {
+      "season": {
+        "content": "$1"
+      },
+      "count": {
+        "content": "$2"
+      }
+    }
+  },
+  "listLoading": {
+    "message": "評価を読み込み中…"
+  },
+  "seasonNotFound": {
+    "message": "このシーズンはまだ IMDb にありません"
+  },
+  "seriesOverall": {
+    "message": "シリーズ全体の評価"
+  },
+  "fixToggle": {
+    "message": "作品が違う？ 修正する"
+  },
+  "fixTitle": {
+    "message": "正しい作品を選択"
+  },
+  "fixFor": {
+    "message": "Prime 上のタイトル: 「$TITLE$」。選択はこのタイトルについて保存されます。",
+    "placeholders": {
+      "title": {
+        "content": "$1"
+      }
+    }
+  },
+  "searchPlaceholder": {
+    "message": "IMDb で検索…"
+  },
+  "searchButton": {
+    "message": "検索"
+  },
+  "searching": {
+    "message": "検索中…"
+  },
+  "noResults": {
+    "message": "結果がありません。別のタイトルか英語のタイトルで試してください。"
+  },
+  "pick": {
+    "message": "選択"
+  },
+  "currentPick": {
+    "message": "現在"
+  },
+  "backToAuto": {
+    "message": "自動照合に戻す"
+  },
+  "saved": {
+    "message": "保存しました"
+  },
+  "saveFailed": {
+    "message": "保存できませんでした"
+  },
+  "revertedAuto": {
+    "message": "自動照合に戻しました"
+  },
+  "revertFailed": {
+    "message": "元に戻せませんでした"
+  },
+  "settingsTitle": {
+    "message": "設定"
+  },
+  "whenLabel": {
+    "message": "表示するタイミング"
+  },
+  "modeControls": {
+    "message": "操作バーと一緒"
+  },
+  "modeStart": {
+    "message": "エピソード開始時"
+  },
+  "modeAlways": {
+    "message": "常に表示"
+  },
+  "positionLabel": {
+    "message": "位置"
+  },
+  "posTopLeft": {
+    "message": "左上"
+  },
+  "posTopRight": {
+    "message": "右上"
+  },
+  "posBottomLeft": {
+    "message": "左下"
+  },
+  "posBottomRight": {
+    "message": "右下"
+  },
+  "posUnderTitle": {
+    "message": "タイトルの下"
+  },
+  "underTitleShort": {
+    "message": "タイトル下"
+  },
+  "screenTitle": {
+    "message": "タイトル",
+    "description": "Label on the mini player preview in settings"
+  },
+  "sizeLabel": {
+    "message": "サイズ"
+  },
+  "sizeS": {
+    "message": "小"
+  },
+  "sizeM": {
+    "message": "中"
+  },
+  "sizeL": {
+    "message": "大"
+  },
+  "tVotes": {
+    "message": "投票数"
+  },
+  "tSeries": {
+    "message": "シリーズの評価"
+  },
+  "tChart": {
+    "message": "クリックでシーズングラフ"
+  },
+  "tList": {
+    "message": "エピソード一覧に評価"
+  },
+  "tMovies": {
+    "message": "映画でも表示"
+  },
+  "tToolbar": {
+    "message": "アイコンに評価"
+  },
+  "clearCache": {
+    "message": "キャッシュを消去"
+  },
+  "cacheCleared": {
+    "message": "キャッシュを消去しました（$COUNT$）",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "clearFailed": {
+    "message": "消去できませんでした"
+  },
+  "copyDiag": {
+    "message": "診断情報をコピー"
+  },
+  "copied": {
+    "message": "クリップボードにコピーしました"
+  },
+  "copyFailed": {
+    "message": "コピーできませんでした"
+  },
+  "testConn": {
+    "message": "IMDb 接続をテスト"
+  },
+  "testing": {
+    "message": "テスト中…"
+  },
+  "connOk": {
+    "message": "IMDb 接続 OK（$MS$ ms）",
+    "placeholders": {
+      "ms": {
+        "content": "$1"
+      }
+    }
+  },
+  "connFail": {
+    "message": "接続エラー: $CODE$",
+    "placeholders": {
+      "code": {
+        "content": "$1"
+      }
+    }
+  },
+  "shortcutHint": {
+    "message": "バッジの表示/非表示:"
+  },
+  "reportBug": {
+    "message": "不具合報告 / お問い合わせ"
+  },
+  "reportIntro": {
+    "message": "不具合やご提案があれば下に書いてください。自動送信はされません。メールで開き、ご自身で送信します。"
+  },
+  "reportPlaceholder": {
+    "message": "何が起きましたか？どの作品・エピソードですか？ ご意見だけでも構いません。"
+  },
+  "reportIncludeDiag": {
+    "message": "技術情報を含める（バージョン、言語、検出した作品とエピソード）"
+  },
+  "reportEmail": {
+    "message": "メールアプリで開く"
+  },
+  "reportGmail": {
+    "message": "Gmail で開く"
+  },
+  "reportCopy": {
+    "message": "レポートをコピー"
+  },
+  "reportCopied": {
+    "message": "レポートをコピーしました。$EMAIL$ に送ってください",
+    "placeholders": {
+      "email": {
+        "content": "$1"
+      }
+    }
+  },
+  "reportOrWrite": {
+    "message": "または $EMAIL$ に直接ご連絡ください",
+    "placeholders": {
+      "email": {
+        "content": "$1"
+      }
+    }
+  },
+  "reportGithub": {
+    "message": "GitHub で報告"
+  },
+  "disclaimer": {
+    "message": "IMDb および Amazon とは無関係です。評価データ: IMDb"
+  }
+}

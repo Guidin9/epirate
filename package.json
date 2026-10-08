@@ -1,16 +1,30 @@
 {
-  "name": "prime-imdb-rating",
-  "version": "1.0.0",
+  "name": "epirate",
+  "version": "1.1.0",
   "private": true,
-  "description": "Prime Video'da izlenen bölümün IMDb puanını gösteren kişisel tarayıcı eklentisi",
+  "description": "EpiRate – IMDb episode ratings while you watch (Prime Video browser extension)",
+  "author": "Mert Demirdöven <contact@mertdemirdoven.me>",
+  "homepage": "https://github.com/Guidin9/epirate",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Guidin9/epirate.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Guidin9/epirate/issues",
+    "email": "contact@mertdemirdoven.me"
+  },
   "scripts": {
     "test": "node --test \"tests/unit/**/*.test.js\"",
     "test:live": "node --test \"tests/live/**/*.test.js\"",
     "test:e2e": "node tests/e2e/run.mjs",
     "test:all": "npm test && npm run test:live && npm run test:e2e",
-    "check": "node tools/check.mjs",
+    "check": "node tools/build-locales.mjs --check && node tools/check.mjs",
     "sync:prime": "node tools/sync-prime-formats.mjs",
-    "icons": "node tools/make-icons.mjs"
+    "icons": "node tools/make-icons.mjs",
+    "locales": "node tools/build-locales.mjs",
+    "package": "node tools/package.mjs",
+    "store:texts": "node tools/build-store-texts.mjs",
+    "store:assets": "node tools/store-assets.mjs"
   },
   "devDependencies": {
     "puppeteer": "25.12.0"

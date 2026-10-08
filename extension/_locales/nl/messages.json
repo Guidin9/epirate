@@ -1,0 +1,353 @@
+{
+  "extName": {
+    "message": "EpiRate – Afleveringsscores tijdens het kijken",
+    "description": "Extension name (max 75 chars)"
+  },
+  "extShortName": {
+    "message": "EpiRate",
+    "description": "Short name"
+  },
+  "extDescription": {
+    "message": "Toont de IMDb-score van de Prime Video-aflevering die je kijkt, in de speler en in de afleveringenlijst.",
+    "description": "Extension description (max 132 chars)"
+  },
+  "actionTitle": {
+    "message": "EpiRate",
+    "description": "Toolbar button tooltip"
+  },
+  "cmdToggle": {
+    "message": "Scorebadge tonen / verbergen",
+    "description": "Keyboard shortcut description"
+  },
+  "loading": {
+    "message": "Score zoeken…"
+  },
+  "noRating": {
+    "message": "Nog geen score"
+  },
+  "notFound": {
+    "message": "Niet gevonden op IMDb"
+  },
+  "episodeNotFound": {
+    "message": "Aflevering niet op IMDb"
+  },
+  "error": {
+    "message": "IMDb niet bereikbaar"
+  },
+  "retry": {
+    "message": "Opnieuw"
+  },
+  "votesCount": {
+    "message": "$COUNT$ stemmen",
+    "description": "Vote count; COUNT is already formatted (e.g. 30K)",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "series": {
+    "message": "Serie",
+    "description": "Label before the overall series rating"
+  },
+  "seasonEpisode": {
+    "message": "Seizoen $SEASON$ · Aflevering $EPISODE$",
+    "placeholders": {
+      "season": {
+        "content": "$1"
+      },
+      "episode": {
+        "content": "$2"
+      }
+    }
+  },
+  "episodeN": {
+    "message": "Aflevering $NUM$",
+    "placeholders": {
+      "num": {
+        "content": "$1"
+      }
+    }
+  },
+  "seasonChartTitle": {
+    "message": "Scores seizoen $SEASON$",
+    "placeholders": {
+      "season": {
+        "content": "$1"
+      }
+    }
+  },
+  "openImdb": {
+    "message": "Openen op IMDb"
+  },
+  "openSeries": {
+    "message": "Seriepagina"
+  },
+  "wrongMatch": {
+    "message": "Verkeerde serie? Pas het aan via het EpiRate-pictogram in de werkbalk."
+  },
+  "matchedByTitle": {
+    "message": "Gekoppeld via de afleveringstitel"
+  },
+  "matchedByOverride": {
+    "message": "Handmatig gekozen koppeling"
+  },
+  "close": {
+    "message": "Sluiten"
+  },
+  "badgeLabel": {
+    "message": "IMDb-score"
+  },
+  "panelLabel": {
+    "message": "IMDb-details"
+  },
+  "popupSubtitle": {
+    "message": "Afleveringsscores voor Prime Video"
+  },
+  "popupLoading": {
+    "message": "Laden…"
+  },
+  "notPrime": {
+    "message": "Dit tabblad is geen Prime Video. Open een aflevering op Prime Video en de score verschijnt ook hier."
+  },
+  "idleHint": {
+    "message": "Speel een aflevering af of open een seriepagina en de scores verschijnen hier."
+  },
+  "kickerEpisode": {
+    "message": "Nu aan het kijken"
+  },
+  "kickerMovie": {
+    "message": "Nu aan het kijken · film"
+  },
+  "kickerShow": {
+    "message": "Nu aan het kijken"
+  },
+  "listStatusOk": {
+    "message": "Seizoen $SEASON$ · scores van $COUNT$ afleveringen in de lijst",
+    "placeholders": {
+      "season": {
+        "content": "$1"
+      },
+      "count": {
+        "content": "$2"
+      }
+    }
+  },
+  "listLoading": {
+    "message": "Scores laden…"
+  },
+  "seasonNotFound": {
+    "message": "Dit seizoen staat nog niet op IMDb"
+  },
+  "seriesOverall": {
+    "message": "totaalscore van de serie"
+  },
+  "fixToggle": {
+    "message": "Verkeerde koppeling? Aanpassen"
+  },
+  "fixTitle": {
+    "message": "Kies de juiste serie of film"
+  },
+  "fixFor": {
+    "message": "Titel op Prime: ‘$TITLE$’. Je keuze wordt voor deze titel onthouden.",
+    "placeholders": {
+      "title": {
+        "content": "$1"
+      }
+    }
+  },
+  "searchPlaceholder": {
+    "message": "Zoeken op IMDb…"
+  },
+  "searchButton": {
+    "message": "Zoeken"
+  },
+  "searching": {
+    "message": "Zoeken…"
+  },
+  "noResults": {
+    "message": "Geen resultaten. Probeer een andere of de Engelse titel."
+  },
+  "pick": {
+    "message": "Kiezen"
+  },
+  "currentPick": {
+    "message": "Huidig"
+  },
+  "backToAuto": {
+    "message": "Terug naar automatische koppeling"
+  },
+  "saved": {
+    "message": "Opgeslagen"
+  },
+  "saveFailed": {
+    "message": "Opslaan mislukt"
+  },
+  "revertedAuto": {
+    "message": "Terug naar automatische koppeling"
+  },
+  "revertFailed": {
+    "message": "Ongedaan maken mislukt"
+  },
+  "settingsTitle": {
+    "message": "Instellingen"
+  },
+  "whenLabel": {
+    "message": "Wanneer tonen?"
+  },
+  "modeControls": {
+    "message": "Met bediening"
+  },
+  "modeStart": {
+    "message": "Bij start aflevering"
+  },
+  "modeAlways": {
+    "message": "Altijd"
+  },
+  "positionLabel": {
+    "message": "Positie"
+  },
+  "posTopLeft": {
+    "message": "Linksboven"
+  },
+  "posTopRight": {
+    "message": "Rechtsboven"
+  },
+  "posBottomLeft": {
+    "message": "Linksonder"
+  },
+  "posBottomRight": {
+    "message": "Rechtsonder"
+  },
+  "posUnderTitle": {
+    "message": "Onder de titel"
+  },
+  "underTitleShort": {
+    "message": "Onder titel"
+  },
+  "screenTitle": {
+    "message": "Titel",
+    "description": "Label on the mini player preview in settings"
+  },
+  "sizeLabel": {
+    "message": "Grootte"
+  },
+  "sizeS": {
+    "message": "Klein"
+  },
+  "sizeM": {
+    "message": "Middel"
+  },
+  "sizeL": {
+    "message": "Groot"
+  },
+  "tVotes": {
+    "message": "Aantal stemmen"
+  },
+  "tSeries": {
+    "message": "Seriescore"
+  },
+  "tChart": {
+    "message": "Seizoensgrafiek bij klikken"
+  },
+  "tList": {
+    "message": "Scores in afleveringenlijst"
+  },
+  "tMovies": {
+    "message": "Ook bij films"
+  },
+  "tToolbar": {
+    "message": "Score op pictogram"
+  },
+  "clearCache": {
+    "message": "Cache wissen"
+  },
+  "cacheCleared": {
+    "message": "Cache gewist ($COUNT$)",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "clearFailed": {
+    "message": "Wissen mislukt"
+  },
+  "copyDiag": {
+    "message": "Diagnose kopiëren"
+  },
+  "copied": {
+    "message": "Gekopieerd naar klembord"
+  },
+  "copyFailed": {
+    "message": "Kopiëren mislukt"
+  },
+  "testConn": {
+    "message": "IMDb-verbinding testen"
+  },
+  "testing": {
+    "message": "Testen…"
+  },
+  "connOk": {
+    "message": "IMDb-verbinding OK ($MS$ ms)",
+    "placeholders": {
+      "ms": {
+        "content": "$1"
+      }
+    }
+  },
+  "connFail": {
+    "message": "Verbindingsfout: $CODE$",
+    "placeholders": {
+      "code": {
+        "content": "$1"
+      }
+    }
+  },
+  "shortcutHint": {
+    "message": "Badge tonen/verbergen:"
+  },
+  "reportBug": {
+    "message": "Fout melden / Contact"
+  },
+  "reportIntro": {
+    "message": "Een fout gevonden of een suggestie? Schrijf het hieronder. Er wordt niets automatisch verzonden: het opent in je e-mail en je verstuurt het zelf."
+  },
+  "reportPlaceholder": {
+    "message": "Wat gebeurde er? Welke serie en aflevering? Of schrijf gewoon je bericht."
+  },
+  "reportIncludeDiag": {
+    "message": "Technische details meesturen (versie, taal, herkende serie en aflevering)"
+  },
+  "reportEmail": {
+    "message": "Openen in e-mailapp"
+  },
+  "reportGmail": {
+    "message": "Openen in Gmail"
+  },
+  "reportCopy": {
+    "message": "Rapport kopiëren"
+  },
+  "reportCopied": {
+    "message": "Rapport gekopieerd — stuur het naar $EMAIL$",
+    "placeholders": {
+      "email": {
+        "content": "$1"
+      }
+    }
+  },
+  "reportOrWrite": {
+    "message": "Of mail direct naar $EMAIL$",
+    "placeholders": {
+      "email": {
+        "content": "$1"
+      }
+    }
+  },
+  "reportGithub": {
+    "message": "Melden op GitHub"
+  },
+  "disclaimer": {
+    "message": "Niet verbonden aan IMDb of Amazon. Scoregegevens: IMDb."
+  }
+}

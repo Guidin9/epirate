@@ -103,6 +103,18 @@ main { padding: 10px 10px 4px; display: flex; flex-direction: column; gap: 10px;
 .results .empty { background: none; color: var(--muted); }
 .fix > .btn.ghost { margin-top: 10px; }
 
+.report textarea {
+  width: 100%; resize: vertical; min-height: 76px; padding: 8px 10px; border-radius: 10px;
+  border: 1px solid var(--line-strong); background: var(--bg); color: var(--text); outline: none; font: inherit;
+}
+.report textarea:focus { border-color: var(--yellow); }
+.check { display: flex; align-items: flex-start; gap: 8px; margin-top: 8px; font-size: 12px; color: var(--muted); cursor: pointer; }
+.check input { margin: 2px 0 0; accent-color: var(--yellow); }
+.report-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.hint.small { margin: 10px 0 0; font-size: 11.5px; }
+.hint a { color: var(--muted); }
+.link.strong { color: var(--text); font-weight: 600; }
+
 .field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 12px; }
 .label { color: var(--muted); font-size: 12px; }
 .seg { display: flex; background: var(--bg); border: 1px solid var(--line); border-radius: 999px; padding: 3px; }
@@ -132,9 +144,9 @@ main { padding: 10px 10px 4px; display: flex; flex-direction: column; gap: 10px;
 .spot.ut { left: 50%; top: 30px; transform: translateX(-50%); width: 92px; height: 18px; }
 .spot.ut span { font-size: 10.5px; color: var(--muted); font-weight: 600; }
 .spot.ut[aria-checked="true"] span { color: var(--ink); }
-.screen::before {
-  content: "Dizi Adı"; position: absolute; left: 50%; top: 8px; transform: translateX(-50%);
-  font-size: 10px; color: rgba(255,255,255,.55); letter-spacing: .02em;
+.screen-title {
+  position: absolute; left: 50%; top: 8px; transform: translateX(-50%); white-space: nowrap;
+  font-size: 10px; color: rgba(255,255,255,.55); letter-spacing: .02em; pointer-events: none;
 }
 
 .toggles { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 10px; }
@@ -160,11 +172,12 @@ main { padding: 10px 10px 4px; display: flex; flex-direction: column; gap: 10px;
 .link { border: 0; background: none; padding: 0; color: var(--muted); cursor: pointer; text-decoration: underline; text-underline-offset: 2px; }
 .link:hover { color: var(--text); }
 .kbd-hint { width: 100%; }
+.disclaimer { width: 100%; color: var(--faint); font-size: 10.5px; }
 kbd { font: inherit; font-size: 10.5px; padding: 0 4px; border-radius: 4px; border: 1px solid var(--line-strong); color: var(--muted); }
 .toast {
   position: absolute; right: 14px; bottom: 10px; padding: 4px 10px; border-radius: 999px;
   background: var(--yellow); color: var(--ink); font-weight: 700; opacity: 0; transition: opacity 150ms ease;
-  pointer-events: none;
+  pointer-events: none; max-width: calc(100% - 28px); white-space: normal; text-align: center;
 }
 .toast.show { opacity: 1; }
 

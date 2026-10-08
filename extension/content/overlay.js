@@ -2,7 +2,7 @@
 (function () {
   'use strict';
   const NS = globalThis.PVIMDB;
-  const { T, formatRating, formatVotes, formatDate, ratingTier } = NS;
+  const { t, formatRating, votesText, formatDate, ratingTier, textDirection } = NS;
 
   const ROOT_ATTR = 'data-pvimdb-root';
   const SIZE_SCALE = { s: 0.86, m: 1, l: 1.18 };
@@ -104,7 +104,7 @@
 .p-meta b { color: var(--text); font-weight: 600; }
 .p-note { margin-top: 0.45em; color: var(--faint); font-size: 0.86em; }
 .chart-title { margin-top: 0.9em; color: var(--faint); font-size: 0.8em; text-transform: uppercase; letter-spacing: 0.08em; }
-.chart { margin-top: 0.45em; display: flex; align-items: flex-end; gap: 3px; height: 5.2em; }
+.chart { direction: ltr; margin-top: 0.45em; display: flex; align-items: flex-end; gap: 3px; height: 5.2em; }
 .bar { flex: 1 1 0; min-width: 4px; position: relative; display: flex; flex-direction: column; justify-content: flex-end; height: 100%; text-decoration: none; }
 .bar i { display: block; border-radius: 3px 3px 1px 1px; background: var(--none); opacity: 0.55; transition: opacity 120ms ease; }
 .bar.great i { background: var(--great); } .bar.good i { background: var(--good); }
@@ -112,7 +112,7 @@
 .bar:hover i { opacity: 0.95; }
 .bar.current i { opacity: 1; box-shadow: 0 0 0 1.5px #fff; }
 .bar.after i { opacity: 0.8; }
-.labels { display: flex; gap: 3px; margin-top: 0.3em; }
+.labels { direction: ltr; display: flex; gap: 3px; margin-top: 0.3em; }
 .labels span { flex: 1 1 0; min-width: 4px; text-align: center; color: var(--faint); font-size: 0.72em; font-variant-numeric: tabular-nums; }
 .labels span.current { color: var(--text); font-weight: 700; }
 .p-links { display: flex; gap: 0.5em; margin-top: 0.85em; flex-wrap: wrap; }
@@ -151,6 +151,7 @@
     const style = el('style');
     style.textContent = CSS;
     const layer = el('div', 'layer');
+    layer.setAttribute('dir', textDirection());
     const anchor = el('div', 'anchor');
     const badge = el('button', 'badge');
     badge.type = 'button';
@@ -159,7 +160,7 @@
     const panel = el('div', 'panel');
     panel.hidden = true;
     panel.setAttribute('role', 'dialog');
-    panel.setAttribute('aria-label', 'IMDb ayrıntıları');
+    panel.setAttribute('aria-label', t('panelLabel'));
     anchor.append(badge, panel);
     layer.append(anchor);
     shadow.append(style, layer);
@@ -230,21 +231,21 @@
 
       if (status === 'loading') {
         const s = el('span', 'status');
-        s.append(el('span', null, T.loading.replace('…', '')), el('span', 'dots'));
+        s.append(el('span', null, t('loading').replace(/(…|\.\.\.)$/, '')), el('span', 'dots'));
         add(s);
-        badge.setAttribute('aria-label', T.loading);
+        badge.setAttribute('aria-label', t('loading'));
         return;
       }
       if (status === 'error') {
-        const s = el('span', 'status', T.error + ' · ');
-        s.append(el('span', 'retry', T.retry));
+        const s = el('span', 'status', t('error') + ' · ');
+        s.append(el('span', 'retry', t('retry')));
         add(s);
-        badge.setAttribute('aria-label', T.error);
+        badge.setAttribute('aria-label', t('error'));
         return;
       }
       if (status === 'not-found') {
-        add(el('span', 'status', T.notFound));
-        badge.setAttribute('aria-label', T.notFound);
+        add(el('span', 'status', t('notFound')));
+        badge.setAttribute('aria-label', t('notFound'));
         return;
       }
 
@@ -252,21 +253,21 @@
         const main = el('span', 'main');
         main.append(el('span', 'star', '★'), el('span', 'value', formatRating(ratingSource.rating)), el('span', 'scale', '/10'));
         add(main);
-        if (settings.showVotes && ratingSource.votes) add(el('span', 'extra votes', `${formatVotes(ratingSource.votes)} ${T.votes}`));
+        if (settings.showVotes && ratingSource.votes) add(el('span', 'extra votes', votesText(ratingSource.votes)));
       } else {
-        add(el('span', 'status', status === 'episode-not-found' ? T.episodeNotFound : T.noRating));
+        add(el('span', 'status', status === 'episode-not-found' ? t('episodeNotFound') : t('noRating')));
       }
 
       const showSeries = result && result.kind === 'episode' && show && typeof show.rating === 'number'
         && (settings.showSeriesRating || status !== 'ok');
       if (showSeries) {
-        const s = el('span', 'extra series', T.series + ' ');
+        const s = el('span', 'extra series', t('series') + ' ');
         s.append(el('b', null, formatRating(show.rating)));
         add(s);
       }
       const label = ratingSource && typeof ratingSource.rating === 'number'
-        ? `${T.badgeLabel}: ${formatRating(ratingSource.rating)} / 10`
-        : `${T.badgeLabel}: ${status === 'episode-not-found' ? T.episodeNotFound : T.noRating}`;
+        ? `${t('badgeLabel')}: ${formatRating(ratingSource.rating)} / 10`
+        : `${t('badgeLabel')}: ${status === 'episode-not-found' ? t('episodeNotFound') : t('noRating')}`;
       badge.setAttribute('aria-label', label);
     }
 
@@ -280,7 +281,7 @@
       const playing = state.item && state.item.episode != null ? state.item.episode : null;
       const current = result.episode ? result.episode.episode : playing;
       const wrap = el('div');
-      wrap.append(el('div', 'chart-title', `${result.season}. ${T.season} · ${T.seasonChart}`));
+      wrap.append(el('div', 'chart-title', t('seasonChartTitle', [result.season])));
       const chart = el('div', 'chart');
       const labels = el('div', 'labels');
       const every = eps.length > 24 ? 5 : eps.length > 12 ? 2 : 1;
@@ -295,7 +296,7 @@
         bar.append(fill);
         // Sonraki bölümlerin adı gösterilmez (spoiler olmasın); hangi bölümde olunduğu bilinmiyorsa hiçbiri.
         const showName = e.title && current != null && e.episode <= current;
-        bar.title = `${e.episode}. ${T.episode}${showName ? ' · ' + e.title : ''} · ★ ${formatRating(e.rating)}${e.votes ? ` (${formatVotes(e.votes)} ${T.votes})` : ''}`;
+        bar.title = `${t('episodeN', [e.episode])}${showName ? ' · ' + e.title : ''} · ★ ${formatRating(e.rating)}${e.votes ? ` (${votesText(e.votes)})` : ''}`;
         bar.setAttribute('aria-label', bar.title);
         chart.append(bar);
         const lab = el('span', current != null && e.episode === current ? 'current' : null, (e.episode % every === 0 || e.episode === 1 || e.episode === current) ? String(e.episode) : '');
@@ -325,7 +326,7 @@
       }
       const close = el('button', 'p-close', '×');
       close.type = 'button';
-      close.setAttribute('aria-label', T.close);
+      close.setAttribute('aria-label', t('close'));
       close.addEventListener('click', () => setPanel(false));
       head.append(showBox, close);
       panel.append(head);
@@ -334,7 +335,7 @@
         const line = el('div', 'p-ep');
         const season = ep ? ep.season : result.season;
         const number = ep ? ep.episode : item && item.episode;
-        if (season != null && number != null) line.append(`${season}. ${T.season} · ${number}. ${T.episode}`);
+        if (season != null && number != null) line.append(t('seasonEpisode', [season, number]));
         if (ep && ep.title) { line.append(' — '); line.append(el('b', null, ep.title)); }
         if (line.childNodes.length) panel.append(line);
       }
@@ -343,9 +344,9 @@
       const score = el('div', 'p-score');
       if (subject && typeof subject.rating === 'number') {
         score.append(el('span', 'star', '★'), el('span', 'p-big', formatRating(subject.rating)), el('span', 'p-of', '/10'));
-        if (subject.votes) score.append(el('span', 'p-votes', `${formatVotes(subject.votes)} ${T.votes}`));
+        if (subject.votes) score.append(el('span', 'p-votes', votesText(subject.votes)));
       } else {
-        score.append(el('span', 'p-of', status === 'episode-not-found' ? T.episodeNotFound : T.noRating));
+        score.append(el('span', 'p-of', status === 'episode-not-found' ? t('episodeNotFound') : t('noRating')));
       }
       panel.append(score);
 
@@ -353,15 +354,15 @@
       const metaParts = [];
       if (ep && ep.airDate) metaParts.push(document.createTextNode(formatDate(ep.airDate)));
       if (result.kind === 'episode' && show && typeof show.rating === 'number') {
-        const s = el('span', null, `${T.series} ★ `);
+        const s = el('span', null, `${t('series')} ★ `);
         s.append(el('b', null, formatRating(show.rating)));
         metaParts.push(s);
       }
       metaParts.forEach((p, i) => { if (i) meta.append(' · '); meta.append(p); });
       if (metaParts.length) panel.append(meta);
 
-      if (result.matchedBy === 'title') panel.append(el('div', 'p-note', T.matchedByTitle));
-      if (result.matchedBy === 'override') panel.append(el('div', 'p-note', T.matchedByOverride));
+      if (result.matchedBy === 'title') panel.append(el('div', 'p-note', t('matchedByTitle')));
+      if (result.matchedBy === 'override') panel.append(el('div', 'p-note', t('matchedByOverride')));
 
       if (result.kind === 'episode' && state.settings.seasonChart) {
         const chart = renderChart(result);
@@ -369,10 +370,10 @@
       }
 
       const links = el('div', 'p-links');
-      if (ep) links.append(link(ep.url, null, T.openImdb + ' ↗'));
-      if (show) links.append(link(show.url, ep ? 'ghost' : null, (ep ? T.openSeries : T.openImdb) + ' ↗'));
+      if (ep) links.append(link(ep.url, null, t('openImdb') + ' ↗'));
+      if (show) links.append(link(show.url, ep ? 'ghost' : null, (ep ? t('openSeries') : t('openImdb')) + ' ↗'));
       panel.append(links);
-      panel.append(el('div', 'p-hint', T.wrongMatch));
+      panel.append(el('div', 'p-hint', t('wrongMatch')));
     }
 
     function render() {

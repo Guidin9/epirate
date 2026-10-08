@@ -1,0 +1,353 @@
+{
+  "extName": {
+    "message": "EpiRate – Notas dos episódios enquanto você assiste",
+    "description": "Extension name (max 75 chars)"
+  },
+  "extShortName": {
+    "message": "EpiRate",
+    "description": "Short name"
+  },
+  "extDescription": {
+    "message": "Mostra a nota do IMDb do episódio do Prime Video que você está assistindo, no player e na lista de episódios.",
+    "description": "Extension description (max 132 chars)"
+  },
+  "actionTitle": {
+    "message": "EpiRate",
+    "description": "Toolbar button tooltip"
+  },
+  "cmdToggle": {
+    "message": "Mostrar / ocultar o selo da nota",
+    "description": "Keyboard shortcut description"
+  },
+  "loading": {
+    "message": "Buscando nota…"
+  },
+  "noRating": {
+    "message": "Ainda sem nota"
+  },
+  "notFound": {
+    "message": "Não encontrado no IMDb"
+  },
+  "episodeNotFound": {
+    "message": "Episódio não está no IMDb"
+  },
+  "error": {
+    "message": "Não foi possível acessar o IMDb"
+  },
+  "retry": {
+    "message": "Tentar de novo"
+  },
+  "votesCount": {
+    "message": "$COUNT$ votos",
+    "description": "Vote count; COUNT is already formatted (e.g. 30K)",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "series": {
+    "message": "Série",
+    "description": "Label before the overall series rating"
+  },
+  "seasonEpisode": {
+    "message": "Temporada $SEASON$ · Episódio $EPISODE$",
+    "placeholders": {
+      "season": {
+        "content": "$1"
+      },
+      "episode": {
+        "content": "$2"
+      }
+    }
+  },
+  "episodeN": {
+    "message": "Episódio $NUM$",
+    "placeholders": {
+      "num": {
+        "content": "$1"
+      }
+    }
+  },
+  "seasonChartTitle": {
+    "message": "Notas da temporada $SEASON$",
+    "placeholders": {
+      "season": {
+        "content": "$1"
+      }
+    }
+  },
+  "openImdb": {
+    "message": "Abrir no IMDb"
+  },
+  "openSeries": {
+    "message": "Página da série"
+  },
+  "wrongMatch": {
+    "message": "Série errada? Corrija pelo ícone do EpiRate na barra de ferramentas."
+  },
+  "matchedByTitle": {
+    "message": "Associado pelo título do episódio"
+  },
+  "matchedByOverride": {
+    "message": "Correspondência escolhida manualmente"
+  },
+  "close": {
+    "message": "Fechar"
+  },
+  "badgeLabel": {
+    "message": "Nota do IMDb"
+  },
+  "panelLabel": {
+    "message": "Detalhes do IMDb"
+  },
+  "popupSubtitle": {
+    "message": "Notas de episódios para o Prime Video"
+  },
+  "popupLoading": {
+    "message": "Carregando…"
+  },
+  "notPrime": {
+    "message": "Esta aba não é o Prime Video. Abra um episódio no Prime Video e a nota também aparecerá aqui."
+  },
+  "idleHint": {
+    "message": "Reproduza um episódio ou abra a página de uma série e as notas aparecerão aqui."
+  },
+  "kickerEpisode": {
+    "message": "Assistindo agora"
+  },
+  "kickerMovie": {
+    "message": "Assistindo agora · filme"
+  },
+  "kickerShow": {
+    "message": "Assistindo agora"
+  },
+  "listStatusOk": {
+    "message": "Temporada $SEASON$ · notas de $COUNT$ episódios na lista",
+    "placeholders": {
+      "season": {
+        "content": "$1"
+      },
+      "count": {
+        "content": "$2"
+      }
+    }
+  },
+  "listLoading": {
+    "message": "Carregando notas…"
+  },
+  "seasonNotFound": {
+    "message": "Esta temporada ainda não está no IMDb"
+  },
+  "seriesOverall": {
+    "message": "nota geral da série"
+  },
+  "fixToggle": {
+    "message": "Correspondência errada? Corrigir"
+  },
+  "fixTitle": {
+    "message": "Escolha a série ou o filme certo"
+  },
+  "fixFor": {
+    "message": "Título no Prime: “$TITLE$”. Sua escolha fica salva para este título.",
+    "placeholders": {
+      "title": {
+        "content": "$1"
+      }
+    }
+  },
+  "searchPlaceholder": {
+    "message": "Buscar no IMDb…"
+  },
+  "searchButton": {
+    "message": "Buscar"
+  },
+  "searching": {
+    "message": "Buscando…"
+  },
+  "noResults": {
+    "message": "Nenhum resultado. Tente outro título ou o título em inglês."
+  },
+  "pick": {
+    "message": "Escolher"
+  },
+  "currentPick": {
+    "message": "Atual"
+  },
+  "backToAuto": {
+    "message": "Voltar à correspondência automática"
+  },
+  "saved": {
+    "message": "Salvo"
+  },
+  "saveFailed": {
+    "message": "Não foi possível salvar"
+  },
+  "revertedAuto": {
+    "message": "Voltou à correspondência automática"
+  },
+  "revertFailed": {
+    "message": "Não foi possível desfazer"
+  },
+  "settingsTitle": {
+    "message": "Configurações"
+  },
+  "whenLabel": {
+    "message": "Quando mostrar?"
+  },
+  "modeControls": {
+    "message": "Com os controles"
+  },
+  "modeStart": {
+    "message": "No início do episódio"
+  },
+  "modeAlways": {
+    "message": "Sempre"
+  },
+  "positionLabel": {
+    "message": "Posição"
+  },
+  "posTopLeft": {
+    "message": "Superior esquerdo"
+  },
+  "posTopRight": {
+    "message": "Superior direito"
+  },
+  "posBottomLeft": {
+    "message": "Inferior esquerdo"
+  },
+  "posBottomRight": {
+    "message": "Inferior direito"
+  },
+  "posUnderTitle": {
+    "message": "Abaixo do título"
+  },
+  "underTitleShort": {
+    "message": "Abaixo do título"
+  },
+  "screenTitle": {
+    "message": "Título",
+    "description": "Label on the mini player preview in settings"
+  },
+  "sizeLabel": {
+    "message": "Tamanho"
+  },
+  "sizeS": {
+    "message": "Pequeno"
+  },
+  "sizeM": {
+    "message": "Médio"
+  },
+  "sizeL": {
+    "message": "Grande"
+  },
+  "tVotes": {
+    "message": "Número de votos"
+  },
+  "tSeries": {
+    "message": "Nota da série"
+  },
+  "tChart": {
+    "message": "Gráfico da temporada ao clicar"
+  },
+  "tList": {
+    "message": "Notas na lista de episódios"
+  },
+  "tMovies": {
+    "message": "Também em filmes"
+  },
+  "tToolbar": {
+    "message": "Nota no ícone"
+  },
+  "clearCache": {
+    "message": "Limpar cache"
+  },
+  "cacheCleared": {
+    "message": "Cache limpo ($COUNT$)",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "clearFailed": {
+    "message": "Não foi possível limpar"
+  },
+  "copyDiag": {
+    "message": "Copiar diagnóstico"
+  },
+  "copied": {
+    "message": "Copiado para a área de transferência"
+  },
+  "copyFailed": {
+    "message": "Não foi possível copiar"
+  },
+  "testConn": {
+    "message": "Testar conexão com o IMDb"
+  },
+  "testing": {
+    "message": "Testando…"
+  },
+  "connOk": {
+    "message": "Conexão com o IMDb OK ($MS$ ms)",
+    "placeholders": {
+      "ms": {
+        "content": "$1"
+      }
+    }
+  },
+  "connFail": {
+    "message": "Erro de conexão: $CODE$",
+    "placeholders": {
+      "code": {
+        "content": "$1"
+      }
+    }
+  },
+  "shortcutHint": {
+    "message": "Mostrar/ocultar selo:"
+  },
+  "reportBug": {
+    "message": "Relatar problema / Contato"
+  },
+  "reportIntro": {
+    "message": "Encontrou um problema ou tem uma sugestão? Escreva abaixo. Nada é enviado automaticamente: abre no seu e-mail e você mesmo envia."
+  },
+  "reportPlaceholder": {
+    "message": "O que aconteceu? Qual série e episódio? Ou escreva sua mensagem."
+  },
+  "reportIncludeDiag": {
+    "message": "Incluir detalhes técnicos (versão, idioma, série e episódio detectados)"
+  },
+  "reportEmail": {
+    "message": "Abrir no app de e-mail"
+  },
+  "reportGmail": {
+    "message": "Abrir no Gmail"
+  },
+  "reportCopy": {
+    "message": "Copiar relatório"
+  },
+  "reportCopied": {
+    "message": "Relatório copiado — envie para $EMAIL$",
+    "placeholders": {
+      "email": {
+        "content": "$1"
+      }
+    }
+  },
+  "reportOrWrite": {
+    "message": "Ou escreva direto para $EMAIL$",
+    "placeholders": {
+      "email": {
+        "content": "$1"
+      }
+    }
+  },
+  "reportGithub": {
+    "message": "Relatar no GitHub"
+  },
+  "disclaimer": {
+    "message": "Sem vínculo com o IMDb ou a Amazon. Dados das notas: IMDb."
+  }
+}

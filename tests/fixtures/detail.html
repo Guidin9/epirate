@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Prime Video: The Boys - Season 1</title>
+<!--
+  Prime Video dizi sayfasındaki bölüm listesinin test kopyası (yapı canlı sayfadan alındı):
+  li[data-testid="episode-list-item"] > … > div[data-automation-id="ep-title-episode-N"] > div > h3 > span "1. “Başlık”"
+  Görseller telifli olmasın diye nötr renk geçişleri.
+-->
+<style>
+  html, body { margin: 0; background: #00050d; color: #fff; font-family: "Segoe UI", Arial, sans-serif; }
+  .nav { height: 64px; display: flex; align-items: center; gap: 28px; padding: 0 44px; background: #0f171e; font-weight: 600; color: #e8eaec; }
+  .nav b { font-size: 20px; letter-spacing: -0.02em; color: #fff; }
+  .hero { padding: 18px 44px 12px; display: flex; align-items: center; gap: 24px; }
+  .art { font-size: 38px; font-weight: 900; letter-spacing: -0.02em; }
+  .badges { display: flex; gap: 14px; color: #aab4be; font-size: 15px; }
+  .badges span { display: inline-flex; align-items: center; }
+  .sel { margin: 0 44px 18px; display: inline-flex; padding: 8px 16px; border-radius: 8px; background: #1b2530; font-weight: 600; }
+  .sel input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+  ul { list-style: none; margin: 0; padding: 0 44px 24px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px 22px; }
+  li { display: flex; flex-direction: column; }
+  .thumb { aspect-ratio: 16 / 8; border-radius: 10px; }
+  h3 { margin: 12px 0 0; font-size: 16px; font-weight: 700; }
+  .meta { margin-top: 8px; color: #8d99a5; font-size: 13px; }
+</style>
+</head>
+<body>
+  <div class="nav"><b>prime video</b><span>Home</span><span>Movies</span><span>TV Shows</span></div>
+  <div class="hero">
+    <div data-testid="title-art"><span class="art">THE BOYS</span><img alt="The Boys" width="1" height="1" style="position:absolute;opacity:0" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"></div>
+    <div class="badges">
+      <span role="img" data-automation-id="imdb-rating-badge" aria-label="IMDb rating: 8.5">IMDb 8.5/10</span>
+      <span role="img" data-automation-id="release-year-badge" aria-label="Released: 2019">2019</span>
+      <span>18+</span>
+    </div>
+  </div>
+  <div class="sel" data-testid="dp-season-selector"><input type="checkbox" aria-label="Season Selector. Season 1 is selected"><span>S1</span></div>
+  <ul id="list"></ul>
+<script>
+  const titles = ['The Name of the Game', 'Cherry', 'Get Some', 'The Female of the Species', 'Good for the Soul', 'The Innocents', 'The Self-Preservation Society', 'You Found Me'];
+  const hues = [12, 205, 32, 280, 160, 345, 48, 230];
+  const list = document.getElementById('list');
+  titles.forEach((t, i) => {
+    const li = document.createElement('li');
+    li.id = 'av-ep-episode-' + i;
+    li.setAttribute('data-testid', 'episode-list-item');
+    const h = hues[i];
+    li.innerHTML = '<div class="thumb" style="background: radial-gradient(70% 90% at 30% 30%, hsl(' + h + ' 55% 42%), transparent 70%), linear-gradient(135deg, hsl(' + h + ' 40% 18%), #05080c)"></div>'
+      + '<div data-automation-id="ep-title-episode-' + i + '"><div><h3><span></span></h3><div></div></div></div>'
+      + '<div class="meta">' + (55 + (i * 3) % 9) + ' min</div>';
+    li.querySelector('h3 span').textContent = (i + 1) + '. “' + t + '”';
+    list.append(li);
+  });
+</script>
+</body>
+</html>
