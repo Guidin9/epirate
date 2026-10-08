@@ -1,0 +1,31 @@
+{
+ "data": {
+  "title": {
+   "id": "tt17351924",
+   "titleText": {
+    "text": "Saltburn"
+   },
+   "originalTitleText": {
+    "text": "Saltburn"
+   },
+   "titleType": {
+    "id": "movie",
+    "text": "Movie"
+   },
+   "releaseYear": {
+    "year": 2023,
+    "endYear": null
+   },
+   "ratingsSummary": {
+    "aggregateRating": 7,
+    "voteCount": 272487
+   }
+  }
+ },
+ "extensions": {
+  "disclaimer": "Public, commercial, and/or non-private use of the IMDb data provided by this API is not allowed. For limited non-commercial use of IMDb data and the associated requirements see https://help.imdb.com/article/imdb/general-information/can-i-use-imdb-data-in-my-software/G5JTRESSHJBBHTGX#",
+  "experimentalFields": {
+   "janet": []
+  }
+ }
+}

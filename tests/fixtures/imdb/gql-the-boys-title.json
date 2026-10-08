@@ -1,0 +1,31 @@
+{
+ "data": {
+  "title": {
+   "id": "tt1190634",
+   "titleText": {
+    "text": "The Boys"
+   },
+   "originalTitleText": {
+    "text": "The Boys"
+   },
+   "titleType": {
+    "id": "tvSeries",
+    "text": "TV Series"
+   },
+   "releaseYear": {
+    "year": 2019,
+    "endYear": 2026
+   },
+   "ratingsSummary": {
+    "aggregateRating": 8.5,
+    "voteCount": 1030190
+   }
+  }
+ },
+ "extensions": {
+  "disclaimer": "Public, commercial, and/or non-private use of the IMDb data provided by this API is not allowed. For limited non-commercial use of IMDb data and the associated requirements see https://help.imdb.com/article/imdb/general-information/can-i-use-imdb-data-in-my-software/G5JTRESSHJBBHTGX#",
+  "experimentalFields": {
+   "janet": []
+  }
+ }
+}

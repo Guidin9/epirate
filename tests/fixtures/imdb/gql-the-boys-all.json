@@ -1,0 +1,991 @@
+{
+ "data": {
+  "title": {
+   "id": "tt1190634",
+   "titleText": {
+    "text": "The Boys"
+   },
+   "originalTitleText": {
+    "text": "The Boys"
+   },
+   "titleType": {
+    "id": "tvSeries",
+    "text": "TV Series"
+   },
+   "releaseYear": {
+    "year": 2019,
+    "endYear": 2026
+   },
+   "ratingsSummary": {
+    "aggregateRating": 8.5,
+    "voteCount": 1030190
+   },
+   "episodes": {
+    "displayableSeasons": {
+     "edges": [
+      {
+       "node": {
+        "text": "1"
+       }
+      },
+      {
+       "node": {
+        "text": "2"
+       }
+      },
+      {
+       "node": {
+        "text": "3"
+       }
+      },
+      {
+       "node": {
+        "text": "4"
+       }
+      },
+      {
+       "node": {
+        "text": "5"
+       }
+      }
+     ]
+    },
+    "episodes": {
+     "total": 40,
+     "pageInfo": {
+      "hasNextPage": false,
+      "endCursor": "dHQzMzAyMzQ5NA=="
+     },
+     "edges": [
+      {
+       "node": {
+        "id": "tt7775902",
+        "titleText": {
+         "text": "The Name of the Game"
+        },
+        "ratingsSummary": {
+         "aggregateRating": 8.7,
+         "voteCount": 40344
+        },
+        "releaseDate": {
+         "year": 2019,
+         "month": 7,
+         "day": 26
+        },
+        "series": {
+         "episodeNumber": {
+          "episodeNumber": 1,
+          "seasonNumber": 1
+         }
+        }
+       }
+      },
+      {
+       "node": {
+        "id": "tt8100946",
+        "titleText": {
+         "text": "Cherry"
+        },
+        "ratingsSummary": {
+         "aggregateRating": 8.5,
+         "voteCount": 32267
+        },
+        "releaseDate": {
+         "year": 2019,
+         "month": 7,
+         "day": 26
+        },
+        "series": {
+         "episodeNumber": {
+          "episodeNumber": 2,
+          "seasonNumber": 1
+         }
+        }
+       }
+      },
+      {
+       "node": {
+        "id": "tt8100948",
+        "titleText": {
+         "text": "Get Some"
+        },
+        "ratingsSummary": {
+         "aggregateRating": 8.3,
+         "voteCount": 30456
+        },
+        "releaseDate": {
+         "year": 2019,
+         "month": 7,
+         "day": 26
+        },
+        "series": {
+         "episodeNumber": {
+          "episodeNumber": 3,
+          "seasonNumber": 1
+         }
+        }
+       }
+      },
+      {
+       "node": {
+        "id": "tt8100950",
+        "titleText": {
+         "text": "The Female of the Species"
+        },
+        "ratingsSummary": {
+         "aggregateRating": 8.7,
+         "voteCount": 30823
+        },
+        "releaseDate": {
+         "year": 2019,
+         "month": 7,
+         "day": 26
+        },
+        "series": {
+         "episodeNumber": {
+          "episodeNumber": 4,
+          "seasonNumber": 1
+         }
+        }
+       }
+      },
+      {
+       "node": {
+        "id": "tt8100952",
+        "titleText": {
+         "text": "Good for the Soul"
+        },
+        "ratingsSummary": {
+         "aggregateRating": 8.3,
+         "voteCount": 29381
+        },
+        "releaseDate": {
+         "year": 2019,
+         "month": 7,
+         "day": 26
+        },
+        "series": {
+         "episodeNumber": {
+          "episodeNumber": 5,
+          "seasonNumber": 1
+         }
+        }
+       }
+      },
+      {
+       "node": {
+        "id": "tt8100954",
+        "titleText": {
+         "text": "The Innocents"
+        },
+        "ratingsSummary": {
+         "aggregateRating": 8.1,
+         "voteCount": 28288
+        },
+        "releaseDate": {
+         "year": 2019,
+         "month": 7,
+         "day": 26
+        },
+        "series": {
+         "episodeNumber": {
+          "episodeNumber": 6,
+          "seasonNumber": 1
+         }
+        }
+       }
+      },
+      {
+       "node": {
+        "id": "tt8100956",
+        "titleText": {
+         "text": "The Self-Preservation Society"
+        },
+        "ratingsSummary": {
+         "aggregateRating": 8.7,
+         "voteCount": 28836
+        },
+        "releaseDate": {
+         "year": 2019,
+         "month": 7,
+         "day": 26
+        },
+        "series": {
+         "episodeNumber": {
+          "episodeNumber": 7,
+          "seasonNumber": 1
+         }
+        }
+       }
+      },
+      {
+       "node": {
+        "id": "tt8100958",
+        "titleText": {
+         "text": "You Found Me"
+        },
+        "ratingsSummary": {
+         "aggregateRating": 9.1,
+         "voteCount": 34017
+        },
+        "releaseDate": {
+         "year": 2019,
+         "month": 7,
+         "day": 26
+        },
+        "series": {
+         "episodeNumber": {
+          "episodeNumber": 8,
+          "seasonNumber": 1
+         }
+        }
+       }
+      },
+      {
+       "node": {
+        "id": "tt10666364",
+        "titleText": {
+         "text": "The Big Ride"
+        },
+        "ratingsSummary": {
+         "aggregateRating": 8.1,
+         "voteCount": 27272
+        },
+        "releaseDate": {
+         "year": 2020,
+         "month": 9,
+         "day": 4
+        },
+        "series": {
+         "episodeNumber": {
+          "episodeNumber": 1,
+          "seasonNumber": 2
+         }
+        }
+       }
+      },
+      {
+       "node": {
+        "id": "tt11783338",
+        "titleText": {
+         "text": "Proper Preparation and Planning"
+        },
+        "ratingsSummary": {
+         "aggregateRating": 7.6,
+         "voteCount": 25722
+        },
+        "releaseDate": {
+         "year": 2020,
+         "month": 9,
+         "day": 4
+        },
+        "series": {
+         "episodeNumber": {
+          "episodeNumber": 2,
+          "seasonNumber": 2
+         }
+        }
+       }
+      },
+      {
+       "node": {
+        "id": "tt11748808",
+        "titleText": {
+         "text": "Over the Hill with the Swords of a Thousand Men"
+        },
+        "ratingsSummary": {
+         "aggregateRating": 9,
+         "voteCount": 29359
+        },
+        "releaseDate": {
+         "year": 2020,
+         "month": 9,
+         "day": 4
+        },
+        "series": {
+         "episodeNumber": {
+          "episodeNumber": 3,
+          "seasonNumber": 2
+         }
+        }
+       }
+      },
+      {
+       "node": {
+        "id": "tt11563692",
+        "titleText": {
+         "text": "Nothing Like It in the World"
+        },
+        "ratingsSummary": {
+         "aggregateRating": 8,
+         "voteCount": 25269
+        },
+        "releaseDate": {
+         "year": 2020,
+         "month": 9,
+         "day": 11
+        },
+        "series": {
+         "episodeNumber": {
+          "episodeNumber": 4,
+          "seasonNumber": 2
+         }
+        }
+       }
+      },
+      {
+       "node": {
+        "id": "tt11290880",
+        "titleText": {
+         "text": "We Gotta Go Now"
+        },
+        "ratingsSummary": {
+         "aggregateRating": 8.3,
+         "voteCount": 25384
+        },
+        "releaseDate": {
+         "year": 2020,
+         "month": 9,
+         "day": 18
+        },
+        "series": {
+         "episodeNumber": {
+          "episodeNumber": 5,
+          "seasonNumber": 2
+         }
+        }
+       }
+      },
+      {
+       "node": {
+        "id": "tt11997262",
+        "titleText": {
+         "text": "The Bloody Doors Off"
+        },
+        "ratingsSummary": {
+         "aggregateRating": 8.9,
+         "voteCount": 27400
+        },
+        "releaseDate": {
+         "year": 2020,
+         "month": 9,
+         "day": 25
+        },
+        "series": {
+         "episodeNumber": {
+          "episodeNumber": 6,
+          "seasonNumber": 2
+         }
+        }
+       }
+      },
+      {
+       "node": {
+        "id": "tt11997264",
+        "titleText": {
+         "text": "Butcher, Baker, Candlestick Maker"
+        },
+        "ratingsSummary": {
+         "aggregateRating": 9,
+         "voteCount": 28208
+        },
+        "releaseDate": {
+         "year": 2020,
+         "month": 10,
+         "day": 2
+        },
+        "series": {
+         "episodeNumber": {
+          "episodeNumber": 7,
+          "seasonNumber": 2
+         }
+        }
+       }
+      },
+      {
+       "node": {
+        "id": "tt12187284",
+        "titleText": {
+         "text": "What I Know"
+        },
+        "ratingsSummary": {
+         "aggregateRating": 9.4,
+         "voteCount": 37585
+        },
+        "releaseDate": {
+         "year": 2020,
+         "month": 10,
+         "day": 9
+        },
+        "series": {
+         "episodeNumber": {
+          "episodeNumber": 8,
+          "seasonNumber": 2
+         }
+        }
+       }
+      },
+      {
+       "node": {
+        "id": "tt12312450",
+        "titleText": {
+         "text": "Payback"
+        },
+        "ratingsSummary": {
+         "aggregateRating": 8.3,
+         "voteCount": 28201
+        },
+        "releaseDate": {
+         "year": 2022,
+         "month": 6,
+         "day": 3
+        },
+        "series": {
+         "episodeNumber": {
+          "episodeNumber": 1,
+          "seasonNumber": 3
+         }
+        }
+       }
+      },
+      {
+       "node": {
+        "id": "tt13609680",
+        "titleText": {
+         "text": "The Only Man in the Sky"
+        },
+        "ratingsSummary": {
+         "aggregateRating": 8.6,
+         "voteCount": 27257
+        },
+        "releaseDate": {
+         "year": 2022,
+         "month": 6,
+         "day": 3
+        },
+        "series": {
+         "episodeNumber": {
+          "episodeNumber": 2,
+          "seasonNumber": 3
+         }
+        }
+       }
+      },
+      {
+       "node": {
+        "id": "tt13707622",
+        "titleText": {
+         "text": "Barbary Coast"
+        },
+        "ratingsSummary": {
+         "aggregateRating": 8.2,
+         "voteCount": 26176
+        },
+        "releaseDate": {
+         "year": 2022,
+         "month": 6,
+         "day": 3
+        },
+        "series": {
+         "episodeNumber": {
+          "episodeNumber": 3,
+          "seasonNumber": 3
+         }
+        }
+       }
+      },
+      {
+       "node": {
+        "id": "tt14048850",
+        "titleText": {
+         "text": "Glorious Five Year Plan"
+        },
+        "ratingsSummary": {
+         "aggregateRating": 8.9,
+         "voteCount": 29030
+        },
+        "releaseDate": {
+         "year": 2022,
+         "month": 6,
+         "day": 10
+        },
+        "series": {
+         "episodeNumber": {
+          "episodeNumber": 4,
+          "seasonNumber": 3
+         }
+        }
+       }
+      },
+      {
+       "node": {
+        "id": "tt14075350",
+        "titleText": {
+         "text": "The Last Time to Look on This World of Lies"
+        },
+        "ratingsSummary": {
+         "aggregateRating": 8.2,
+         "voteCount": 26124
+        },
+        "releaseDate": {
+         "year": 2022,
+         "month": 6,
+         "day": 17
+        },
+        "series": {
+         "episodeNumber": {
+          "episodeNumber": 5,
+          "seasonNumber": 3
+         }
+        }
+       }
+      },
+      {
+       "node": {
+        "id": "tt14143312",
+        "titleText": {
+         "text": "Herogasm"
+        },
+        "ratingsSummary": {
+         "aggregateRating": 9.6,
+         "voteCount": 59984
+        },
+        "releaseDate": {
+         "year": 2022,
+         "month": 6,
+         "day": 24
+        },
+        "series": {
+         "episodeNumber": {
+          "episodeNumber": 6,
+          "seasonNumber": 3
+         }
+        }
+       }
+      },
+      {
+       "node": {
+        "id": "tt14246406",
+        "titleText": {
+         "text": "Here Comes a Candle to Light You to Bed"
+        },
+        "ratingsSummary": {
+         "aggregateRating": 8.9,
+         "voteCount": 29822
+        },
+        "releaseDate": {
+         "year": 2022,
+         "month": 7,
+         "day": 1
+        },
+        "series": {
+         "episodeNumber": {
+          "episodeNumber": 7,
+          "seasonNumber": 3
+         }
+        }
+       }
+      },
+      {
+       "node": {
+        "id": "tt14268898",
+        "titleText": {
+         "text": "The Instant White-Hot Wild"
+        },
+        "ratingsSummary": {
+         "aggregateRating": 8.3,
+         "voteCount": 34117
+        },
+        "releaseDate": {
+         "year": 2022,
+         "month": 7,
+         "day": 8
+        },
+        "series": {
+         "episodeNumber": {
+          "episodeNumber": 8,
+          "seasonNumber": 3
+         }
+        }
+       }
+      },
+      {
+       "node": {
+        "id": "tt21027866",
+        "titleText": {
+         "text": "Department of Dirty Tricks"
+        },
+        "ratingsSummary": {
+         "aggregateRating": 7.3,
+         "voteCount": 32858
+        },
+        "releaseDate": {
+         "year": 2024,
+         "month": 6,
+         "day": 13
+        },
+        "series": {
+         "episodeNumber": {
+          "episodeNumber": 1,
+          "seasonNumber": 4
+         }
+        }
+       }
+      },
+      {
+       "node": {
+        "id": "tt28429719",
+        "titleText": {
+         "text": "Life Among the Septics"
+        },
+        "ratingsSummary": {
+         "aggregateRating": 7,
+         "voteCount": 29732
+        },
+        "releaseDate": {
+         "year": 2024,
+         "month": 6,
+         "day": 13
+        },
+        "series": {
+         "episodeNumber": {
+          "episodeNumber": 2,
+          "seasonNumber": 4
+         }
+        }
+       }
+      },
+      {
+       "node": {
+        "id": "tt28429720",
+        "titleText": {
+         "text": "We'll Keep the Red Flag Flying Here"
+        },
+        "ratingsSummary": {
+         "aggregateRating": 7.4,
+         "voteCount": 28686
+        },
+        "releaseDate": {
+         "year": 2024,
+         "month": 6,
+         "day": 13
+        },
+        "series": {
+         "episodeNumber": {
+          "episodeNumber": 3,
+          "seasonNumber": 4
+         }
+        }
+       }
+      },
+      {
+       "node": {
+        "id": "tt28429721",
+        "titleText": {
+         "text": "Wisdom of the Ages"
+        },
+        "ratingsSummary": {
+         "aggregateRating": 8.8,
+         "voteCount": 38495
+        },
+        "releaseDate": {
+         "year": 2024,
+         "month": 6,
+         "day": 20
+        },
+        "series": {
+         "episodeNumber": {
+          "episodeNumber": 4,
+          "seasonNumber": 4
+         }
+        }
+       }
+      },
+      {
+       "node": {
+        "id": "tt27507018",
+        "titleText": {
+         "text": "Beware the Jabberwock, My Son"
+        },
+        "ratingsSummary": {
+         "aggregateRating": 8,
+         "voteCount": 29218
+        },
+        "releaseDate": {
+         "year": 2024,
+         "month": 6,
+         "day": 27
+        },
+        "series": {
+         "episodeNumber": {
+          "episodeNumber": 5,
+          "seasonNumber": 4
+         }
+        }
+       }
+      },
+      {
+       "node": {
+        "id": "tt28429722",
+        "titleText": {
+         "text": "Dirty Business"
+        },
+        "ratingsSummary": {
+         "aggregateRating": 7.4,
+         "voteCount": 29338
+        },
+        "releaseDate": {
+         "year": 2024,
+         "month": 7,
+         "day": 4
+        },
+        "series": {
+         "episodeNumber": {
+          "episodeNumber": 6,
+          "seasonNumber": 4
+         }
+        }
+       }
+      },
+      {
+       "node": {
+        "id": "tt28429723",
+        "titleText": {
+         "text": "The Insider"
+        },
+        "ratingsSummary": {
+         "aggregateRating": 8.1,
+         "voteCount": 26996
+        },
+        "releaseDate": {
+         "year": 2024,
+         "month": 7,
+         "day": 11
+        },
+        "series": {
+         "episodeNumber": {
+          "episodeNumber": 7,
+          "seasonNumber": 4
+         }
+        }
+       }
+      },
+      {
+       "node": {
+        "id": "tt26660301",
+        "titleText": {
+         "text": "Season Four Finale"
+        },
+        "ratingsSummary": {
+         "aggregateRating": 9,
+         "voteCount": 42614
+        },
+        "releaseDate": {
+         "year": 2024,
+         "month": 7,
+         "day": 18
+        },
+        "series": {
+         "episodeNumber": {
+          "episodeNumber": 8,
+          "seasonNumber": 4
+         }
+        }
+       }
+      },
+      {
+       "node": {
+        "id": "tt32368472",
+        "titleText": {
+         "text": "Fifteen Inches of Sheer Dynamite"
+        },
+        "ratingsSummary": {
+         "aggregateRating": 8.6,
+         "voteCount": 50071
+        },
+        "releaseDate": {
+         "year": 2026,
+         "month": 4,
+         "day": 8
+        },
+        "series": {
+         "episodeNumber": {
+          "episodeNumber": 1,
+          "seasonNumber": 5
+         }
+        }
+       }
+      },
+      {
+       "node": {
+        "id": "tt33023407",
+        "titleText": {
+         "text": "Teenage Kix"
+        },
+        "ratingsSummary": {
+         "aggregateRating": 8.2,
+         "voteCount": 42118
+        },
+        "releaseDate": {
+         "year": 2026,
+         "month": 4,
+         "day": 8
+        },
+        "series": {
+         "episodeNumber": {
+          "episodeNumber": 2,
+          "seasonNumber": 5
+         }
+        }
+       }
+      },
+      {
+       "node": {
+        "id": "tt33023420",
+        "titleText": {
+         "text": "Every One of You Sons of Bitches"
+        },
+        "ratingsSummary": {
+         "aggregateRating": 8,
+         "voteCount": 39964
+        },
+        "releaseDate": {
+         "year": 2026,
+         "month": 4,
+         "day": 15
+        },
+        "series": {
+         "episodeNumber": {
+          "episodeNumber": 3,
+          "seasonNumber": 5
+         }
+        }
+       }
+      },
+      {
+       "node": {
+        "id": "tt33023431",
+        "titleText": {
+         "text": "King of Hell"
+        },
+        "ratingsSummary": {
+         "aggregateRating": 7.2,
+         "voteCount": 40046
+        },
+        "releaseDate": {
+         "year": 2026,
+         "month": 4,
+         "day": 22
+        },
+        "series": {
+         "episodeNumber": {
+          "episodeNumber": 4,
+          "seasonNumber": 5
+         }
+        }
+       }
+      },
+      {
+       "node": {
+        "id": "tt33023447",
+        "titleText": {
+         "text": "One-Shots"
+        },
+        "ratingsSummary": {
+         "aggregateRating": 7.2,
+         "voteCount": 43030
+        },
+        "releaseDate": {
+         "year": 2026,
+         "month": 4,
+         "day": 29
+        },
+        "series": {
+         "episodeNumber": {
+          "episodeNumber": 5,
+          "seasonNumber": 5
+         }
+        }
+       }
+      },
+      {
+       "node": {
+        "id": "tt33023477",
+        "titleText": {
+         "text": "Though the Heavens Fall"
+        },
+        "ratingsSummary": {
+         "aggregateRating": 7.9,
+         "voteCount": 44126
+        },
+        "releaseDate": {
+         "year": 2026,
+         "month": 5,
+         "day": 6
+        },
+        "series": {
+         "episodeNumber": {
+          "episodeNumber": 6,
+          "seasonNumber": 5
+         }
+        }
+       }
+      },
+      {
+       "node": {
+        "id": "tt33023489",
+        "titleText": {
+         "text": "The Frenchman, the Female, and the Man Called Mother's Milk"
+        },
+        "ratingsSummary": {
+         "aggregateRating": 5.8,
+         "voteCount": 59802
+        },
+        "releaseDate": {
+         "year": 2026,
+         "month": 5,
+         "day": 13
+        },
+        "series": {
+         "episodeNumber": {
+          "episodeNumber": 7,
+          "seasonNumber": 5
+         }
+        }
+       }
+      },
+      {
+       "node": {
+        "id": "tt33023494",
+        "titleText": {
+         "text": "Blood and Bone"
+        },
+        "ratingsSummary": {
+         "aggregateRating": 5.6,
+         "voteCount": 132876
+        },
+        "releaseDate": {
+         "year": 2026,
+         "month": 5,
+         "day": 20
+        },
+        "series": {
+         "episodeNumber": {
+          "episodeNumber": 8,
+          "seasonNumber": 5
+         }
+        }
+       }
+      }
+     ]
+    }
+   }
+  }
+ },
+ "extensions": {
+  "disclaimer": "Public, commercial, and/or non-private use of the IMDb data provided by this API is not allowed. For limited non-commercial use of IMDb data and the associated requirements see https://help.imdb.com/article/imdb/general-information/can-i-use-imdb-data-in-my-software/G5JTRESSHJBBHTGX#",
+  "experimentalFields": {
+   "janet": []
+  }
+ }
+}

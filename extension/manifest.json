@@ -1,0 +1,63 @@
+{
+  "manifest_version": 3,
+  "name": "Prime Video IMDb Puanı",
+  "short_name": "PV IMDb",
+  "version": "1.0.0",
+  "description": "Prime Video'da izlediğin bölümün IMDb puanını oynatıcıda ve dizi sayfasındaki bölüm listesinde gösterir.",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAzyldVgfJrnLzHkItvPi3TN/Ag/IW37h+0ecsOMTgdoYQItOD7d0T/3OjBw1FL6EtFIKuO7xcQmROgALv7DMZi63bSoqjwNPuko+XvAphRVFmhX98xoGuPOoaEeyZrpFOj+s1EF+DKS0AY5/SBzEWHcWW0XP6utayGNWAeO5fThR+dJREWVomPeQHTMtYllVGjJnx8UDaAfkNgEB2IP5ITn+ESyJjPC9EGV+IQVBybVZbx33MRPkMVIM6gVITySwxl2cVgI74oPJKfsSoiKUBhNrwBDNru0uCe6ozRhcx7JeO+bVLnaf2lnDIw57Unt9rd1+OVCH77AEGsB3MYyYtIQIDAQAB",
+  "minimum_chrome_version": "121",
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_title": "Prime Video IMDb Puanı",
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": [
+    "storage",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://*.primevideo.com/*",
+    "https://v3.sg.media-imdb.com/*",
+    "https://*.graphql.imdb.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.primevideo.com/*"
+      ],
+      "js": [
+        "shared/episode-formats.js",
+        "shared/parse.js",
+        "shared/strings.js",
+        "shared/settings.js",
+        "content/overlay.js",
+        "content/primevideo.js",
+        "content/primevideo-list.js",
+        "content/main.js"
+      ],
+      "run_at": "document_idle",
+      "all_frames": false
+    }
+  ],
+  "commands": {
+    "toggle-badge": {
+      "suggested_key": {
+        "default": "Alt+Shift+I"
+      },
+      "description": "Puan rozetini gizle / göster"
+    }
+  }
+}

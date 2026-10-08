@@ -1,0 +1,250 @@
+{
+ "data": {
+  "title": {
+   "id": "tt7631058",
+   "titleText": {
+    "text": "The Lord of the Rings: The Rings of Power"
+   },
+   "originalTitleText": {
+    "text": "The Lord of the Rings: The Rings of Power"
+   },
+   "titleType": {
+    "id": "tvSeries",
+    "text": "TV Series"
+   },
+   "releaseYear": {
+    "year": 2022,
+    "endYear": null
+   },
+   "ratingsSummary": {
+    "aggregateRating": 6.8,
+    "voteCount": 445578
+   },
+   "episodes": {
+    "displayableSeasons": {
+     "edges": [
+      {
+       "node": {
+        "text": "1"
+       }
+      },
+      {
+       "node": {
+        "text": "2"
+       }
+      },
+      {
+       "node": {
+        "text": "3"
+       }
+      },
+      {
+       "node": {
+        "text": "4"
+       }
+      }
+     ]
+    },
+    "episodes": {
+     "total": 8,
+     "pageInfo": {
+      "hasNextPage": false,
+      "endCursor": "dHQyNzU4MDQ5Nw=="
+     },
+     "edges": [
+      {
+       "node": {
+        "id": "tt13580784",
+        "titleText": {
+         "text": "Elven Kings Under the Sky"
+        },
+        "ratingsSummary": {
+         "aggregateRating": 7.2,
+         "voteCount": 27252
+        },
+        "releaseDate": {
+         "year": 2024,
+         "month": 8,
+         "day": 29
+        },
+        "series": {
+         "episodeNumber": {
+          "episodeNumber": 1,
+          "seasonNumber": 2
+         }
+        }
+       }
+      },
+      {
+       "node": {
+        "id": "tt27580486",
+        "titleText": {
+         "text": "Where the Stars are Strange"
+        },
+        "ratingsSummary": {
+         "aggregateRating": 7,
+         "voteCount": 24925
+        },
+        "releaseDate": {
+         "year": 2024,
+         "month": 8,
+         "day": 29
+        },
+        "series": {
+         "episodeNumber": {
+          "episodeNumber": 2,
+          "seasonNumber": 2
+         }
+        }
+       }
+      },
+      {
+       "node": {
+        "id": "tt27580490",
+        "titleText": {
+         "text": "The Eagle and the Sceptre"
+        },
+        "ratingsSummary": {
+         "aggregateRating": 6.4,
+         "voteCount": 24772
+        },
+        "releaseDate": {
+         "year": 2024,
+         "month": 8,
+         "day": 29
+        },
+        "series": {
+         "episodeNumber": {
+          "episodeNumber": 3,
+          "seasonNumber": 2
+         }
+        }
+       }
+      },
+      {
+       "node": {
+        "id": "tt27580491",
+        "titleText": {
+         "text": "Eldest"
+        },
+        "ratingsSummary": {
+         "aggregateRating": 6.8,
+         "voteCount": 23456
+        },
+        "releaseDate": {
+         "year": 2024,
+         "month": 9,
+         "day": 5
+        },
+        "series": {
+         "episodeNumber": {
+          "episodeNumber": 4,
+          "seasonNumber": 2
+         }
+        }
+       }
+      },
+      {
+       "node": {
+        "id": "tt27580494",
+        "titleText": {
+         "text": "Halls of Stone"
+        },
+        "ratingsSummary": {
+         "aggregateRating": 7.2,
+         "voteCount": 22252
+        },
+        "releaseDate": {
+         "year": 2024,
+         "month": 9,
+         "day": 12
+        },
+        "series": {
+         "episodeNumber": {
+          "episodeNumber": 5,
+          "seasonNumber": 2
+         }
+        }
+       }
+      },
+      {
+       "node": {
+        "id": "tt27580495",
+        "titleText": {
+         "text": "Where Is He?"
+        },
+        "ratingsSummary": {
+         "aggregateRating": 7.1,
+         "voteCount": 20915
+        },
+        "releaseDate": {
+         "year": 2024,
+         "month": 9,
+         "day": 19
+        },
+        "series": {
+         "episodeNumber": {
+          "episodeNumber": 6,
+          "seasonNumber": 2
+         }
+        }
+       }
+      },
+      {
+       "node": {
+        "id": "tt27580496",
+        "titleText": {
+         "text": "Doomed to Die"
+        },
+        "ratingsSummary": {
+         "aggregateRating": 7.8,
+         "voteCount": 26846
+        },
+        "releaseDate": {
+         "year": 2024,
+         "month": 9,
+         "day": 26
+        },
+        "series": {
+         "episodeNumber": {
+          "episodeNumber": 7,
+          "seasonNumber": 2
+         }
+        }
+       }
+      },
+      {
+       "node": {
+        "id": "tt27580497",
+        "titleText": {
+         "text": "Shadow and Flame"
+        },
+        "ratingsSummary": {
+         "aggregateRating": 7.7,
+         "voteCount": 22556
+        },
+        "releaseDate": {
+         "year": 2024,
+         "month": 10,
+         "day": 3
+        },
+        "series": {
+         "episodeNumber": {
+          "episodeNumber": 8,
+          "seasonNumber": 2
+         }
+        }
+       }
+      }
+     ]
+    }
+   }
+  }
+ },
+ "extensions": {
+  "disclaimer": "Public, commercial, and/or non-private use of the IMDb data provided by this API is not allowed. For limited non-commercial use of IMDb data and the associated requirements see https://help.imdb.com/article/imdb/general-information/can-i-use-imdb-data-in-my-software/G5JTRESSHJBBHTGX#",
+  "experimentalFields": {
+   "janet": []
+  }
+ }
+}

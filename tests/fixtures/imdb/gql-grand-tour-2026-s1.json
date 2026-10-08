@@ -1,0 +1,189 @@
+{
+ "data": {
+  "title": {
+   "id": "tt44974627",
+   "titleText": {
+    "text": "The Grand Tour"
+   },
+   "originalTitleText": {
+    "text": "The Grand Tour"
+   },
+   "titleType": {
+    "id": "tvSeries",
+    "text": "TV Series"
+   },
+   "releaseYear": {
+    "year": 2026,
+    "endYear": null
+   },
+   "ratingsSummary": {
+    "aggregateRating": 8.2,
+    "voteCount": 2463
+   },
+   "episodes": {
+    "displayableSeasons": {
+     "edges": [
+      {
+       "node": {
+        "text": "1"
+       }
+      }
+     ]
+    },
+    "episodes": {
+     "total": 6,
+     "pageInfo": {
+      "hasNextPage": false,
+      "endCursor": "dHQ0NDczNDg0Nw=="
+     },
+     "edges": [
+      {
+       "node": {
+        "id": "tt39719719",
+        "titleText": {
+         "text": "The Next Generation"
+        },
+        "ratingsSummary": {
+         "aggregateRating": 7.8,
+         "voteCount": 690
+        },
+        "releaseDate": {
+         "year": 2026,
+         "month": 9,
+         "day": 3
+        },
+        "series": {
+         "episodeNumber": {
+          "episodeNumber": 1,
+          "seasonNumber": 1
+         }
+        }
+       }
+      },
+      {
+       "node": {
+        "id": "tt44734834",
+        "titleText": {
+         "text": "Sweat, Sports Cars and Singapore"
+        },
+        "ratingsSummary": {
+         "aggregateRating": 8,
+         "voteCount": 503
+        },
+        "releaseDate": {
+         "year": 2026,
+         "month": 9,
+         "day": 3
+        },
+        "series": {
+         "episodeNumber": {
+          "episodeNumber": 2,
+          "seasonNumber": 1
+         }
+        }
+       }
+      },
+      {
+       "node": {
+        "id": "tt44734839",
+        "titleText": {
+         "text": "It's OK to be Kei"
+        },
+        "ratingsSummary": {
+         "aggregateRating": 8.3,
+         "voteCount": 464
+        },
+        "releaseDate": {
+         "year": 2026,
+         "month": 9,
+         "day": 3
+        },
+        "series": {
+         "episodeNumber": {
+          "episodeNumber": 3,
+          "seasonNumber": 1
+         }
+        }
+       }
+      },
+      {
+       "node": {
+        "id": "tt44734840",
+        "titleText": {
+         "text": "Last Car Standing"
+        },
+        "ratingsSummary": {
+         "aggregateRating": 8.3,
+         "voteCount": 390
+        },
+        "releaseDate": {
+         "year": 2026,
+         "month": 9,
+         "day": 3
+        },
+        "series": {
+         "episodeNumber": {
+          "episodeNumber": 4,
+          "seasonNumber": 1
+         }
+        }
+       }
+      },
+      {
+       "node": {
+        "id": "tt44734845",
+        "titleText": {
+         "text": "A Relaxing Spa Weekend"
+        },
+        "ratingsSummary": {
+         "aggregateRating": 8.1,
+         "voteCount": 329
+        },
+        "releaseDate": {
+         "year": 2026,
+         "month": 9,
+         "day": 3
+        },
+        "series": {
+         "episodeNumber": {
+          "episodeNumber": 5,
+          "seasonNumber": 1
+         }
+        }
+       }
+      },
+      {
+       "node": {
+        "id": "tt44734847",
+        "titleText": {
+         "text": "Angola: Survive to Drive"
+        },
+        "ratingsSummary": {
+         "aggregateRating": 8.6,
+         "voteCount": 336
+        },
+        "releaseDate": {
+         "year": 2026,
+         "month": 9,
+         "day": 3
+        },
+        "series": {
+         "episodeNumber": {
+          "episodeNumber": 6,
+          "seasonNumber": 1
+         }
+        }
+       }
+      }
+     ]
+    }
+   }
+  }
+ },
+ "extensions": {
+  "disclaimer": "Public, commercial, and/or non-private use of the IMDb data provided by this API is not allowed. For limited non-commercial use of IMDb data and the associated requirements see https://help.imdb.com/article/imdb/general-information/can-i-use-imdb-data-in-my-software/G5JTRESSHJBBHTGX#",
+  "experimentalFields": {
+   "janet": []
+  }
+ }
+}

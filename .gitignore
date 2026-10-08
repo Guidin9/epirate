@@ -1,0 +1,7 @@
+node_modules/
+.cache/
+tests/artifacts/
+
+# Brave/Chrome "Paketle" çıktıları — .pem özel imza anahtarıdır, asla depoya girmez
+*.pem
+*.crx

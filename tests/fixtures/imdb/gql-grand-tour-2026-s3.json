@@ -1,0 +1,50 @@
+{
+ "data": {
+  "title": {
+   "id": "tt44974627",
+   "titleText": {
+    "text": "The Grand Tour"
+   },
+   "originalTitleText": {
+    "text": "The Grand Tour"
+   },
+   "titleType": {
+    "id": "tvSeries",
+    "text": "TV Series"
+   },
+   "releaseYear": {
+    "year": 2026,
+    "endYear": null
+   },
+   "ratingsSummary": {
+    "aggregateRating": 8.2,
+    "voteCount": 2463
+   },
+   "episodes": {
+    "displayableSeasons": {
+     "edges": [
+      {
+       "node": {
+        "text": "1"
+       }
+      }
+     ]
+    },
+    "episodes": {
+     "total": 0,
+     "pageInfo": {
+      "hasNextPage": false,
+      "endCursor": null
+     },
+     "edges": []
+    }
+   }
+  }
+ },
+ "extensions": {
+  "disclaimer": "Public, commercial, and/or non-private use of the IMDb data provided by this API is not allowed. For limited non-commercial use of IMDb data and the associated requirements see https://help.imdb.com/article/imdb/general-information/can-i-use-imdb-data-in-my-software/G5JTRESSHJBBHTGX#",
+  "experimentalFields": {
+   "janet": []
+  }
+ }
+}

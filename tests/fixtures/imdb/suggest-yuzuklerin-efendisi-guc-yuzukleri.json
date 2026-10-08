@@ -1,0 +1,96 @@
+{
+ "d": [
+  {
+   "i": {
+    "height": 1920,
+    "imageUrl": "https://m.media-amazon.com/images/M/MV5BMjlhYTk3ZGQtNjdlYi00NDQyLTgxZTEtMzk0OTU5OTRhNGZhXkEyXkFqcGc@._V1_.jpg",
+    "width": 1080
+   },
+   "id": "tt7631058",
+   "l": "The Lord of the Rings: The Rings of Power",
+   "q": "TV series",
+   "qid": "tvSeries",
+   "rank": 291,
+   "s": "Morfydd Clark, Ismael Cruz Cordova",
+   "tl": "2022 TV Series",
+   "y": 2022
+  },
+  {
+   "i": {
+    "height": 2936,
+    "imageUrl": "https://m.media-amazon.com/images/M/MV5BNzIxMDQ2YTctNDY4MC00ZTRhLTk4ODQtMTVlOWY4NTdiYmMwXkEyXkFqcGc@._V1_.jpg",
+    "width": 1978
+   },
+   "id": "tt0120737",
+   "l": "The Lord of the Rings: The Fellowship of the Ring",
+   "q": "feature",
+   "qid": "movie",
+   "rank": 285,
+   "s": "Elijah Wood, Ian McKellen",
+   "tl": "2001",
+   "y": 2001
+  },
+  {
+   "i": {
+    "height": 1185,
+    "imageUrl": "https://m.media-amazon.com/images/M/MV5BMTZkMjBjNWMtZGI5OC00MGU0LTk4ZTItODg2NWM3NTVmNWQ4XkEyXkFqcGc@._V1_.jpg",
+    "width": 800
+   },
+   "id": "tt0167260",
+   "l": "The Lord of the Rings: The Return of the King",
+   "q": "feature",
+   "qid": "movie",
+   "rank": 599,
+   "s": "Elijah Wood, Viggo Mortensen",
+   "tl": "2003",
+   "y": 2003
+  },
+  {
+   "i": {
+    "height": 1500,
+    "imageUrl": "https://m.media-amazon.com/images/M/MV5BMGQxMDdiOWUtYjc1Ni00YzM1LWE2NjMtZTg3Y2JkMjEzMTJjXkEyXkFqcGc@._V1_.jpg",
+    "width": 964
+   },
+   "id": "tt0167261",
+   "l": "The Lord of the Rings: The Two Towers",
+   "q": "feature",
+   "qid": "movie",
+   "rank": 1035,
+   "s": "Elijah Wood, Ian McKellen",
+   "tl": "2002",
+   "y": 2002
+  },
+  {
+   "i": {
+    "height": 2827,
+    "imageUrl": "https://m.media-amazon.com/images/M/MV5BNWZmMDIzMWYtYzRkZC00Mjk1LWI4MmMtNmNjZmQ5MDlmOWEzXkEyXkFqcGc@._V1_.jpg",
+    "width": 1908
+   },
+   "id": "tt0077869",
+   "l": "The Lord of the Rings",
+   "q": "feature",
+   "qid": "movie",
+   "rank": 8652,
+   "s": "Christopher Guard, William Squire",
+   "tl": "1978",
+   "y": 1978
+  },
+  {
+   "i": {
+    "height": 1406,
+    "imageUrl": "https://m.media-amazon.com/images/M/MV5BZWVlODY4ZGUtN2IxNS00ZTNiLWI5MDctOGI0YjBlYmFjMjg0XkEyXkFqcGc@._V1_.jpg",
+    "width": 1125
+   },
+   "id": "tt14824600",
+   "l": "The Lord of the Rings: The War of the Rohirrim",
+   "q": "feature",
+   "qid": "movie",
+   "rank": 5760,
+   "s": "Brian Cox, Gaia Wise",
+   "tl": "2024",
+   "y": 2024
+  }
+ ],
+ "q": "y%C3%BCz%C3%BCklerin%20efendisi%3A%20g%C3%BC%C3%A7%20y%C3%BCz%C3%BCkleri",
+ "v": 1
+}

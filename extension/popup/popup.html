@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prime Video IMDb Puanı</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header class="top">
+    <img src="../icons/icon32.png" alt="" width="24" height="24">
+    <div class="brand">
+      <h1>IMDb Puanı</h1>
+      <span class="sub">Prime Video için</span>
+    </div>
+    <span class="version" id="version"></span>
+  </header>
+
+  <main>
+    <section class="card" id="now" aria-live="polite">
+      <div class="now-empty" id="nowEmpty">Yükleniyor…</div>
+      <div class="now-body" id="nowBody" hidden>
+        <div class="now-kicker" id="nowKicker"></div>
+        <div class="now-title" id="nowTitle"></div>
+        <div class="now-ep" id="nowEp"></div>
+        <div class="now-score" id="nowScore"></div>
+        <div class="now-meta" id="nowMeta"></div>
+        <div class="now-actions">
+          <a class="btn primary" id="openImdb" target="_blank" rel="noopener noreferrer" hidden>IMDb'de aç ↗</a>
+          <button class="btn" id="fixToggle" type="button" aria-expanded="false" hidden>Yanlış eşleşme mi? Düzelt</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="card fix" id="fix" hidden>
+      <h2>Doğru diziyi/filmi seç</h2>
+      <p class="hint" id="fixFor"></p>
+      <form id="searchForm" class="search" autocomplete="off">
+        <input id="searchInput" type="search" placeholder="IMDb'de ara…" aria-label="IMDb'de ara">
+        <button class="btn primary" type="submit">Ara</button>
+      </form>
+      <ul class="results" id="results" aria-live="polite"></ul>
+      <button class="btn ghost" id="clearOverride" type="button" hidden>Otomatik eşleşmeye dön</button>
+    </section>
+
+    <section class="card settings">
+      <h2>Ayarlar</h2>
+
+      <div class="field">
+        <span class="label" id="modeLabel">Ne zaman görünsün?</span>
+        <div class="seg" role="radiogroup" aria-labelledby="modeLabel" data-setting="mode">
+          <button type="button" role="radio" data-value="controls">Kontrollerle</button>
+          <button type="button" role="radio" data-value="start">Bölüm başında</button>
+          <button type="button" role="radio" data-value="always">Hep açık</button>
+        </div>
+      </div>
+
+      <div class="field">
+        <span class="label" id="posLabel">Konum</span>
+        <div class="screen" role="radiogroup" aria-labelledby="posLabel" data-setting="position">
+          <button type="button" role="radio" data-value="top-left" class="spot tl" aria-label="Sol üst"></button>
+          <button type="button" role="radio" data-value="under-title" class="spot ut" aria-label="Başlığın altında"><span>Başlık altı</span></button>
+          <button type="button" role="radio" data-value="top-right" class="spot tr" aria-label="Sağ üst"></button>
+          <button type="button" role="radio" data-value="bottom-left" class="spot bl" aria-label="Sol alt"></button>
+          <button type="button" role="radio" data-value="bottom-right" class="spot br" aria-label="Sağ alt"></button>
+          <i class="bar" aria-hidden="true"></i>
+        </div>
+      </div>
+
+      <div class="field">
+        <span class="label" id="sizeLabel">Boyut</span>
+        <div class="seg" role="radiogroup" aria-labelledby="sizeLabel" data-setting="size">
+          <button type="button" role="radio" data-value="s">Küçük</button>
+          <button type="button" role="radio" data-value="m">Orta</button>
+          <button type="button" role="radio" data-value="l">Büyük</button>
+        </div>
+      </div>
+
+      <div class="toggles">
+        <label class="toggle"><input type="checkbox" data-setting="showVotes"><span>Oy sayısı</span></label>
+        <label class="toggle"><input type="checkbox" data-setting="showSeriesRating"><span>Dizinin genel puanı</span></label>
+        <label class="toggle"><input type="checkbox" data-setting="seasonChart"><span>Tıklayınca sezon grafiği</span></label>
+        <label class="toggle"><input type="checkbox" data-setting="listRatings"><span>Bölüm listesinde puanlar</span></label>
+        <label class="toggle"><input type="checkbox" data-setting="movies"><span>Filmlerde de göster</span></label>
+        <label class="toggle"><input type="checkbox" data-setting="toolbarBadge"><span>Simgede puan</span></label>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bottom">
+    <button class="link" id="clearCache" type="button">Önbelleği temizle</button>
+    <button class="link" id="copyDiag" type="button">Tanılama bilgisini kopyala</button>
+    <button class="link" id="testConn" type="button">IMDb bağlantısını test et</button>
+    <span class="kbd-hint">Rozeti gizle/göster: <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>I</kbd></span>
+    <span class="toast" id="toast" role="status" aria-live="polite"></span>
+  </footer>
+
+  <script src="../shared/parse.js"></script>
+  <script src="../shared/strings.js"></script>
+  <script src="../shared/settings.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

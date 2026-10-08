@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="tr-tr">
+<head>
+<meta charset="utf-8">
+<title>Prime Video: The Boys - 1. Sezon</title>
+<!--
+  Prime Video web oynatıcısının DOM iskeletinin test kopyası.
+  Yapı, canlı ATVWebPlayerSDK.js kodundan çıkarıldı:
+  .webPlayerSDKContainer > .webPlayerUIContainer > … > (PausedOverlay) > div[hide sınıfı] > div(TopTitle) > h1.atvwebplayersdk-title-text + h2.atvwebplayersdk-subtitle-text
+  Kontroller gizlenince TopTitle kaldırılmaz; sarmalayıcıya "hide" sınıfı (opacity 0) eklenir.
+-->
+<style>
+  html, body { margin: 0; height: 100%; background: #00050d; color: #fff; font-family: Arial, Helvetica, sans-serif; overflow: hidden; }
+  .detail { padding: 48px; }
+  .detail .badges span { display: inline-block; margin-right: 12px; color: #aab; }
+  #dv-web-player { position: fixed; inset: 0; z-index: 10; }
+  #dv-web-player.closed { display: none; }
+  .webPlayerSDKContainer { position: absolute; inset: 0; background: #000; outline: none; }
+  .webPlayerUIContainer { position: absolute; inset: 0; }
+  .atvwebplayersdk-video-surface { position: absolute; inset: 0; overflow: hidden;
+    background:
+      radial-gradient(60% 50% at 70% 40%, rgba(255, 170, 90, 0.55), transparent 70%),
+      radial-gradient(45% 60% at 25% 65%, rgba(40, 90, 160, 0.55), transparent 70%),
+      linear-gradient(160deg, #2b1d14 0%, #120c09 45%, #05070b 100%); }
+  .atvwebplayersdk-video-surface::after { content: ""; position: absolute; left: 18%; top: 30%; width: 22%; height: 55%;
+    background: radial-gradient(50% 30% at 50% 18%, rgba(0,0,0,.85), transparent 60%), linear-gradient(#0b0b0b, #000); border-radius: 40% 40% 8% 8%; opacity: .9; }
+  video { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; }
+  .overlays { position: absolute; inset: 0; }
+  .scrim-top { position: absolute; left: 0; right: 0; top: 0; height: 30%; background: linear-gradient(rgba(0,0,0,.65), transparent); transition: opacity .2s; }
+  .scrim-bottom { position: absolute; left: 0; right: 0; bottom: 0; height: 30%; background: linear-gradient(transparent, rgba(0,0,0,.7)); transition: opacity .2s; }
+  .paused-overlay { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; }
+  .title-wrap { margin-top: 2.6vh; text-align: center; overflow: hidden; opacity: 1; transition: opacity .2s ease; }
+  .title-wrap.hide, .inactive .scrim-top, .inactive .scrim-bottom, .inactive .controls, .inactive .topbuttons { opacity: 0; }
+  h1.atvwebplayersdk-title-text { margin: auto; font-size: 24px; font-weight: normal; line-height: normal; white-space: nowrap; }
+  h2.atvwebplayersdk-subtitle-text { margin: auto; padding-top: 3px; font-size: 21px; font-weight: lighter; line-height: normal; white-space: nowrap; color: #e6e6e6; }
+  .topbuttons { position: absolute; top: 18px; right: 24px; display: flex; gap: 18px; font-size: 22px; transition: opacity .2s; }
+  .topbuttons button { all: unset; cursor: pointer; font-size: 22px; }
+  .controls { position: absolute; left: 32px; right: 32px; bottom: 26px; transition: opacity .2s; }
+  .seek { height: 4px; border-radius: 2px; background: rgba(255,255,255,.3); }
+  .seek i { display: block; width: 37%; height: 100%; background: #1a98ff; border-radius: 2px; }
+  .row { display: flex; justify-content: space-between; margin-top: 14px; font-size: 15px; color: #ddd; }
+  .center-buttons { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); display: flex; gap: 64px; font-size: 44px; transition: opacity .2s; }
+  .inactive .center-buttons { opacity: 0; }
+</style>
+</head>
+<body>
+  <div class="detail">
+    <div data-testid="title-art"><img alt="The Boys" width="1" height="1" src="data:image/gif;base64,R0lGODlhAQABAAAAACw="></div>
+    <div class="badges">
+      <span role="img" data-automation-id="imdb-rating-badge" aria-label="IMDB Puanı: 8,5">IMDb 8,5/10</span>
+      <span role="img" data-automation-id="release-year-badge" aria-label="Yayınlanma: 2019">2019</span>
+    </div>
+  </div>
+
+  <div id="dv-web-player">
+    <div class="webPlayerSDKContainer" tabindex="-1">
+      <div class="webPlayerUIContainer">
+        <div class="atvwebplayersdk-video-surface"><video muted playsinline></video></div>
+        <div class="overlays" id="overlays">
+          <div class="scrim-top"></div>
+          <div class="scrim-bottom"></div>
+          <div class="paused-overlay">
+            <div class="title-wrap" id="titleWrap">
+              <div class="top-title" tabindex="0">
+                <h1 class="f1x2y3 atvwebplayersdk-title-text" id="pvTitle">The Boys</h1>
+                <h2 class="f4z5w6 atvwebplayersdk-subtitle-text" id="pvSubtitle">1. Sezon 3 Bölüm Al Bakalım</h2>
+              </div>
+            </div>
+          </div>
+          <div class="center-buttons" aria-hidden="true"><span>↺10</span><span>❚❚</span><span>10↻</span></div>
+          <div class="topbuttons"><span aria-hidden="true">💬</span><span aria-hidden="true">⚙</span><span aria-hidden="true">🔊</span><button id="fsButton" type="button" aria-label="Tam ekran">⛶</button><span aria-hidden="true">✕</span></div>
+          <div class="controls" aria-hidden="true">
+            <div class="seek"><i></i></div>
+            <div class="row"><span>21:43</span><span>Sonraki bölüm ›</span><span>-37:12</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script>
+  // Test kancaları: Prime'ın davranışını taklit eder.
+  (function () {
+    const wrap = document.getElementById('titleWrap');
+    const overlays = document.getElementById('overlays');
+    const container = document.querySelector('.webPlayerSDKContainer');
+    const state = { playToggles: 0, keyToggles: 0 };
+    // React kökü gibi: kapsayıcıya gelen tıklama oynat/duraklat yapar.
+    container.addEventListener('pointerup', () => { state.playToggles++; });
+    document.addEventListener('keydown', (e) => { if (e.code === 'Space') state.keyToggles++; });
+    document.getElementById('fsButton').addEventListener('click', () => {
+      if (document.fullscreenElement) document.exitFullscreen(); else container.requestFullscreen();
+    });
+    window.__pv = {
+      state,
+      setTitle(t) { document.getElementById('pvTitle').textContent = t; },
+      setSubtitle(t) {
+        let h2 = document.getElementById('pvSubtitle');
+        if (t == null) { if (h2) h2.remove(); return; }
+        if (!h2) {
+          h2 = document.createElement('h2');
+          h2.id = 'pvSubtitle';
+          h2.className = 'f4z5w6 atvwebplayersdk-subtitle-text';
+          document.querySelector('.top-title').append(h2);
+        }
+        h2.textContent = t;
+      },
+      hideControls() { wrap.classList.add('hide'); overlays.classList.add('inactive'); },
+      showControls() { wrap.classList.remove('hide'); overlays.classList.remove('inactive'); },
+      closePlayer() { document.getElementById('dv-web-player').classList.add('closed'); },
+      openPlayer() { document.getElementById('dv-web-player').classList.remove('closed'); },
+      setLang(l) { document.documentElement.lang = l; },
+    };
+  })();
+</script>
+</body>
+</html>
