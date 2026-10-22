@@ -4,6 +4,7 @@
   "private": true,
   "description": "EpiRate – IMDb episode ratings while you watch (Prime Video browser extension)",
   "author": "Mert Demirdöven <contact@mertdemirdoven.me>",
+  "license": "GPL-3.0-or-later",
   "homepage": "https://github.com/Guidin9/epirate",
   "repository": {
     "type": "git",

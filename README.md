@@ -84,6 +84,10 @@ npm run sync:prime   # refresh Prime's episode-line formats and verify its playe
 | `tools/` | Locale build, Prime format sync, packaging, store assets. |
 | `store/` | Chrome Web Store texts, screenshots, upload guide. |
 
+## License
+
+[GPL-3.0-or-later](LICENSE) © 2026 Mert Demirdöven. Modified versions must be released under the same license with their source code and keep this notice.
+
 ## Disclaimer
 
 EpiRate is an independent project and is not affiliated with, endorsed or sponsored by IMDb or Amazon. IMDb and Prime Video are trademarks of their respective owners. Rating data comes from IMDb.

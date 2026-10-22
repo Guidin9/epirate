@@ -1,5 +1,6 @@
 // Chrome Web Store'a yüklenecek paketi üretir: dist/epirate-<sürüm>.zip
 // - extension/ klasörünün tamamı; manifest'teki "key" alanı çıkarılır (mağaza kendi kimliğini verir).
+// - Kökteki LICENSE da eklenir: GPL, lisans metninin dağıtılan kopyayla gitmesini ister.
 // - Bağımlılıksız küçük bir ZIP yazıcısı kullanır (Node'un zlib'i).
 // Kullanım: npm run package
 import { readFile, readdir, writeFile, mkdir, stat } from 'node:fs/promises';
@@ -85,6 +86,8 @@ for (const full of await walk(EXT)) {
   const data = name === 'manifest.json' ? Buffer.from(JSON.stringify(manifest, null, 2) + '\n', 'utf8') : await readFile(full);
   files.push({ name, data, mtime: (await stat(full)).mtime });
 }
+const license = join(ROOT, 'LICENSE');
+files.push({ name: 'LICENSE', data: await readFile(license), mtime: (await stat(license)).mtime });
 
 await mkdir(DIST, { recursive: true });
 const out = join(DIST, `epirate-${manifest.version}.zip`);
